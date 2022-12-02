@@ -22,7 +22,7 @@ impl Location {
     ///
     /// # Example
     /// ```
-    /// use rustpython_compiler_core::Location;
+    /// use emerald_lang_ast::Location;
     /// let loc = Location::new(10, 10);
     /// ```
     pub fn new(row: usize, column: usize) -> Self {
