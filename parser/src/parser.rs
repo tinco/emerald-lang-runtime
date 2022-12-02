@@ -30,7 +30,7 @@ pub fn parse_program(source: &str, source_path: &str) -> Result<ast::Suite, Pars
 /// # Example
 /// ```
 /// extern crate num_bigint;
-/// use rustpython_parser::{parser, ast};
+/// use emerald_lang_parser::{parser, ast};
 /// let expr = parser::parse_expression("1 + 2", "<embedded>").unwrap();
 ///
 /// assert_eq!(
