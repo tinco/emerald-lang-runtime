@@ -950,7 +950,7 @@ AtomExpr: ast::Expr = {
 
 AtomExpr2: ast::Expr = {
     Atom,
-    <location:@L> <f:AtomExpr2> "(" <a:ArgumentList> ")" <end_location:@R> => {
+    <location:@L> <f:AtomExpr2> "(" <a:ArgumentList> ")" <d:DoBlock?> <end_location:@R> => {
         ast::Expr {
             location,
             end_location: Some(end_location),
@@ -971,6 +971,37 @@ AtomExpr2: ast::Expr = {
         node: ast::ExprKind::Attribute { value: Box::new(e), attr, ctx: ast::ExprContext::Load }
     },
 };
+
+DoBlock: ast::Suite = {
+    <location:@L> <async:("async")?> "do" <p:DoParameters> <r:("->" Test)?> ":" <body:Suite> <end_location:@R> => {
+        let params = Box::new(p);
+        let returns = r.map(|x| Box::new(x.1));
+        let type_comment = None;
+        let name = "DoBlock";
+        let decorator_list = vec![];
+        let node = if is_async.is_some() {
+            ast::StmtKind::AsyncFunctionDef { name, params, body, decorator_list, returns, type_comment }
+        } else {
+            ast::StmtKind::FunctionDef { name, params, body, decorator_list, returns, type_comment }
+        };
+        vec![ast::Stmt::new(location, end_location, node)]
+    }
+}
+
+DoParameters: ast::Arguments = {
+    <a: (ParameterList<TypedParameter>)?> => {
+        a.unwrap_or_else(|| ast::Arguments {
+            posonlyargs: vec![],
+            args: vec![],
+            vararg: None,
+            kwonlyargs: vec![],
+            kw_defaults: vec![],
+            kwarg: None,
+            defaults: vec![]
+        })
+    }
+};
+
 
 SubscriptList: ast::Expr = {
     <location:@L> <s1:Subscript> <s2:("," Subscript)*> <trailing_comma:","?> <end_location:@R> => {
