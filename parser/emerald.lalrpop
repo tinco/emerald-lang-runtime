@@ -978,8 +978,8 @@ DoOp: ast::DoMode = {
 }
 
 DoBlock: ast::Suite = {
-    // I think there is a custom lexer that has on/off modes for lexing indents and we need to control that to parse
-    // body:Suite here.
+    // for some reason it's not accepting the doblock as the end of the statement, and it's expecting
+    // the statement to continue with some operator or expression combinator
     <location:@L> <d:DoOp> <p:ParameterList<UntypedParameter>?> ":" <body:Suite> <end_location:@R> => {
         vec![]
     },

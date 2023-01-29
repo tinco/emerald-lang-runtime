@@ -199,7 +199,7 @@ pub enum ParseErrorType {
     /// Parser encountered an invalid token
     InvalidToken,
     /// Parser encountered an unexpected token
-    UnrecognizedToken(Tok, Option<String>),
+    UnexpectedToken(Tok, Option<String>),
     /// Maps to `User` type from `lalrpop-util`
     Lexical(LexicalErrorType),
 }
@@ -230,9 +230,10 @@ pub(crate) fn parse_error_from_lalrpop(
         LalrpopError::UnrecognizedToken { token, expected } => {
             // Hacky, but it's how CPython does it. See PyParser_AddToken,
             // in particular "Only one possible expected token" comment.
-            let expected = (expected.len() == 1).then(|| expected[0].clone());
+            // let expected = (expected.len() == 1).then(|| expected[0].clone());
+            let expected: Option<String> = Some(expected.join(" or "));
             ParseError {
-                error: ParseErrorType::UnrecognizedToken(token.1, expected),
+                error: ParseErrorType::UnexpectedToken(token.1, expected),
                 location: Location::new(token.0.row(), token.0.column() + 1),
                 source_path,
             }
@@ -251,7 +252,7 @@ impl fmt::Display for ParseErrorType {
             ParseErrorType::Eof => write!(f, "Got unexpected EOF"),
             ParseErrorType::ExtraToken(ref tok) => write!(f, "Got extraneous token: {:?}", tok),
             ParseErrorType::InvalidToken => write!(f, "Got invalid token"),
-            ParseErrorType::UnrecognizedToken(ref tok, ref expected) => {
+            ParseErrorType::UnexpectedToken(ref tok, ref expected) => {
                 if *tok == Tok::Indent {
                     write!(f, "unexpected indent")
                 } else if expected.as_deref() == Some("Indent") {
@@ -269,7 +270,7 @@ impl ParseErrorType {
     pub fn is_indentation_error(&self) -> bool {
         match self {
             ParseErrorType::Lexical(LexicalErrorType::IndentationError) => true,
-            ParseErrorType::UnrecognizedToken(token, expected) => {
+            ParseErrorType::UnexpectedToken(token, expected) => {
                 *token == Tok::Indent || expected.clone() == Some("Indent".to_owned())
             }
             _ => false,
