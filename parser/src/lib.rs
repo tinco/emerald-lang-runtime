@@ -10,8 +10,8 @@
 //! ```
 //! use emerald_lang_parser::{parser, ast};
 //!
-//! let python_source = "print('Hello world')";
-//! let python_ast = parser::parse_expression(python_source, "<embedded>").unwrap();
+//! let emerald_source = "print('Hello world')";
+//! let emerald_ast = parser::parse_expression(emerald_source, "<embedded>").unwrap();
 //!
 //! ```
 
@@ -29,7 +29,7 @@ pub mod lexer;
 pub mod mode;
 pub mod parser;
 #[rustfmt::skip]
-mod python;
+mod emerald;
 mod context;
 mod string;
 pub mod token;

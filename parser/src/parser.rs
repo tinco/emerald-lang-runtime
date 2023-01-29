@@ -1,23 +1,23 @@
-//! Python parsing.
+//! Emerald parsing.
 //!
-//! Use this module to parse python code into an AST.
-//! There are three ways to parse python code. You could
+//! Use this module to parse emerald code into an AST.
+//! There are three ways to parse emerald code. You could
 //! parse a whole program, a single statement, or a single
 //! expression.
 
 use crate::lexer::{LexResult, Tok};
 pub use crate::mode::Mode;
-use crate::{ast, error::ParseError, lexer, python};
+use crate::{ast, error::ParseError, lexer, emerald};
 use itertools::Itertools;
 use std::iter;
 
 /*
- * Parse python code.
- * Grammar may be inspired by antlr grammar for python:
- * https://github.com/antlr/grammars-v4/tree/master/python3
+ * Parse emerald code.
+ * Grammar may be inspired by antlr grammar for emerald:
+ * https://github.com/antlr/grammars-v4/tree/master/emerald3
  */
 
-/// Parse a full python program, containing usually multiple lines.
+/// Parse a full emerald program, containing usually multiple lines.
 pub fn parse_program(source: &str, source_path: &str) -> Result<ast::Suite, ParseError> {
     parse(source, Mode::Module, source_path).map(|top| match top {
         ast::Mod::Module { body, .. } => body,
@@ -25,7 +25,7 @@ pub fn parse_program(source: &str, source_path: &str) -> Result<ast::Suite, Pars
     })
 }
 
-/// Parses a python expression
+/// Parses a emerald expression
 ///
 /// # Example
 /// ```
@@ -79,7 +79,7 @@ pub fn parse(source: &str, mode: Mode, source_path: &str) -> Result<ast::Mod, Pa
         .chain(lxr)
         .filter_ok(|(_, tok, _)| !matches!(tok, Tok::Comment));
 
-    python::TopParser::new()
+    emerald::TopParser::new()
         .parse(tokenizer)
         .map_err(|e| crate::error::parse_error_from_lalrpop(e, source_path))
 }
@@ -95,7 +95,7 @@ pub fn parse_tokens(
         .chain(lxr)
         .filter_ok(|(_, tok, _)| !matches!(tok, Tok::Comment));
 
-    python::TopParser::new()
+    emerald::TopParser::new()
         .parse(tokenizer)
         .map_err(|e| crate::error::parse_error_from_lalrpop(e, source_path))
 }

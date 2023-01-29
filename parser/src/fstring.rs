@@ -99,7 +99,7 @@ impl FStringParser {
                     }
                 }
 
-                // match a python 3.8 self documenting expression
+                // match a python 3.8 style self documenting expression
                 // format '{' PYTHON_EXPRESSION '=' FORMAT_SPECIFIER? '}'
                 '=' if chars.peek() != Some(&'=') && delims.is_empty() => {
                     self_documenting = true;

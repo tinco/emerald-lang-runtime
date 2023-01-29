@@ -1380,6 +1380,7 @@ extern {
         "continue" => lexer::Tok::Continue,
         "def" => lexer::Tok::Def,
         "del" => lexer::Tok::Del,
+        "do" => lexer::Tok::Do,
         "elif" => lexer::Tok::Elif,
         "else" => lexer::Tok::Else,
         "except" => lexer::Tok::Except,

@@ -5,8 +5,8 @@ use std::path::PathBuf;
 use tiny_keccak::{Hasher, Sha3};
 
 fn main() -> anyhow::Result<()> {
-    const SOURCE: &str = "python.lalrpop";
-    const TARGET: &str = "python.rs";
+    const SOURCE: &str = "emerald.lalrpop";
+    const TARGET: &str = "emerald.rs";
 
     println!("cargo:rerun-if-changed={SOURCE}");
 
@@ -18,7 +18,7 @@ fn main() -> anyhow::Result<()> {
 
 fn requires_lalrpop(source: &str, target: &str) -> Option<String> {
     let Ok(target) = File::open(target) else {
-        return Some("python.rs doesn't exist. regenerate.".to_owned());
+        return Some("emerald.rs doesn't exist. regenerate.".to_owned());
     };
 
     let sha_prefix = "// sha3: ";
@@ -32,7 +32,7 @@ fn requires_lalrpop(source: &str, target: &str) -> Option<String> {
         sha3_line
     } else {
         // no sha3 line - maybe old version of lalrpop installed
-        return Some("python.rs doesn't include sha3 hash. regenerate.".to_owned());
+        return Some("emerald.rs doesn't include sha3 hash. regenerate.".to_owned());
     };
     let expected_sha3_str = sha3_line.strip_prefix(sha_prefix).unwrap();
 
@@ -62,7 +62,7 @@ fn requires_lalrpop(source: &str, target: &str) -> Option<String> {
             write!(actual_sha3_str, "{byte:02x}").unwrap();
         }
         return Some(format!(
-            "python.rs hash expected: {expected_sha3_str} but actual: {actual_sha3_str}"
+            "emerald.rs hash expected: {expected_sha3_str} but actual: {actual_sha3_str}"
         ));
     }
     None
@@ -118,6 +118,7 @@ fn gen_phf() {
         .entry("continue", "Tok::Continue")
         .entry("def", "Tok::Def")
         .entry("del", "Tok::Del")
+        .entry("do", "Tok::Do")
         .entry("elif", "Tok::Elif")
         .entry("else", "Tok::Else")
         .entry("except", "Tok::Except")
