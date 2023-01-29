@@ -112,6 +112,7 @@ fn gen_phf() {
         .entry("as", "Tok::As")
         .entry("assert", "Tok::Assert")
         .entry("async", "Tok::Async")
+        .entry("async do", "Tok::AsyncDo")
         .entry("await", "Tok::Await")
         .entry("break", "Tok::Break")
         .entry("class", "Tok::Class")

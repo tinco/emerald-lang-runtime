@@ -972,36 +972,34 @@ AtomExpr2: ast::Expr = {
     },
 };
 
-DoBlock: ast::Suite = {
-    <location:@L> <async:("async")?> "do" <p:DoParameters> <r:("->" Test)?> ":" <body:Suite> <end_location:@R> => {
-        let params = Box::new(p);
-        let returns = r.map(|x| Box::new(x.1));
-        let type_comment = None;
-        let name = "DoBlock";
-        let decorator_list = vec![];
-        let node = if is_async.is_some() {
-            ast::StmtKind::AsyncFunctionDef { name, params, body, decorator_list, returns, type_comment }
-        } else {
-            ast::StmtKind::FunctionDef { name, params, body, decorator_list, returns, type_comment }
-        };
-        vec![ast::Stmt::new(location, end_location, node)]
-    }
+DoOp: ast::DoMode = {
+    "async do" => ast::DoMode::Async,
+    "do" => ast::DoMode::Sync
 }
 
-DoParameters: ast::Arguments = {
-    <a: (ParameterList<TypedParameter>)?> => {
-        a.unwrap_or_else(|| ast::Arguments {
-            posonlyargs: vec![],
-            args: vec![],
-            vararg: None,
-            kwonlyargs: vec![],
-            kw_defaults: vec![],
-            kwarg: None,
-            defaults: vec![]
-        })
-    }
-};
+DoBlock: ast::Suite = {
+    // I think there is a custom lexer that has on/off modes for lexing indents and we need to control that to parse
+    // body:Suite here.
+    <location:@L> <d:DoOp> <p:ParameterList<UntypedParameter>?> ":" <body:Suite> <end_location:@R> => {
+        vec![]
+    },
+}
 
+// DoBlock: ast::Suite = {
+//     <location:@L> <async:("async")?> "do" <p:DoParameters> <r:("->" Test)?> ":" <body:Suite> <end_location:@R> => {
+//         let params = Box::new(p);
+//         let returns = r.map(|x| Box::new(x.1));
+//         let type_comment = None;
+//         let name = "DoBlock";
+//         let decorator_list = vec![];
+//         let node = if is_async.is_some() {
+//             ast::StmtKind::AsyncFunctionDef { name, params, body, decorator_list, returns, type_comment }
+//         } else {
+//             ast::StmtKind::FunctionDef { name, params, body, decorator_list, returns, type_comment }
+//         };
+//         vec![ast::Stmt::new(location, end_location, node)]
+//     }
+// }
 
 SubscriptList: ast::Expr = {
     <location:@L> <s1:Subscript> <s2:("," Subscript)*> <trailing_comma:","?> <end_location:@R> => {
@@ -1405,6 +1403,7 @@ extern {
         "as" => lexer::Tok::As,
         "assert" => lexer::Tok::Assert,
         "async" => lexer::Tok::Async,
+        "async do" => lexer::Tok::Async,
         "await" => lexer::Tok::Await,
         "break" => lexer::Tok::Break,
         "class" => lexer::Tok::Class,

@@ -5,3 +5,4 @@ def example(that: That) -> [Char]:
   is_.characters.map() do c:
     c.upcase
 
+example("ok")

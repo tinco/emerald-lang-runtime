@@ -41,3 +41,8 @@ impl TryFrom<usize> for ConversionFlag {
 
 
 pub type Suite<U = ()> = Vec<Stmt<U>>;
+
+pub enum DoMode {
+    Async,
+    Sync,
+}
