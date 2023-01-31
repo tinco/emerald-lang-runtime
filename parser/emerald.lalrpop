@@ -48,11 +48,16 @@ Statement: ast::Suite = {
 };
 
 SimpleStatement: ast::Suite = {
-    <s1:SmallStatement> <s2:(";" SmallStatement)*> ";"? "\n" => {
+    <s1:SmallStatement> <s2:MoreSmallStatementsOrDoBlock> => {
         let mut statements = vec![s1];
-        statements.extend(s2.into_iter().map(|e| e.1));
+        statements.extend(s2.into_iter());
         statements
     }
+};
+
+MoreSmallStatementsOrDoBlock: ast::Suite = {
+    <d:DoBlock> => d,
+    <s2:(";" SmallStatement)*> ";"? "\n" => s2.into_iter().map(|e| e.1).collect(),
 };
 
 SmallStatement: ast::Stmt = {
@@ -950,7 +955,7 @@ AtomExpr: ast::Expr = {
 
 AtomExpr2: ast::Expr = {
     Atom,
-    <location:@L> <f:AtomExpr2> "(" <a:ArgumentList> ")" <d:DoBlock?> <end_location:@R> => {
+    <location:@L> <f:AtomExpr2> "(" <a:ArgumentList> ")" <end_location:@R> => {
         ast::Expr {
             location,
             end_location: Some(end_location),
