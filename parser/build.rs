@@ -123,6 +123,7 @@ fn gen_phf() {
         .entry("elif", "Tok::Elif")
         .entry("else", "Tok::Else")
         .entry("except", "Tok::Except")
+        .entry("extends", "Tok::Extends")
         .entry("finally", "Tok::Finally")
         .entry("for", "Tok::For")
         .entry("from", "Tok::From")

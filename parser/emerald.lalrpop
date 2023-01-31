@@ -651,9 +651,9 @@ KwargParameter<ArgType>: Option<Box<ast::Arg>> = {
 };
 
 ClassDef: ast::Stmt = {
-    <decorator_list:Decorator*> <location:@L> "class" <name:Identifier> <a:("(" ArgumentList ")")?> ":" <body:Suite> <end_location:@R> => {
+    <decorator_list:Decorator*> <location:@L> "class" <name:Identifier> <a:("extends" Identifier)?> ":" <body:Suite> <end_location:@R> => {
         let (bases, keywords) = match a {
-            Some((_, arg, _)) => (arg.args, arg.keywords),
+            Some((_, arg)) => (vec![], vec![]),
             None => (vec![], vec![]),
         };
         ast::Stmt {
@@ -1419,6 +1419,7 @@ extern {
         "elif" => lexer::Tok::Elif,
         "else" => lexer::Tok::Else,
         "except" => lexer::Tok::Except,
+        "extends" => lexer::Tok::Extends,
         "finally" => lexer::Tok::Finally,
         "for" => lexer::Tok::For,
         "from" => lexer::Tok::From,
