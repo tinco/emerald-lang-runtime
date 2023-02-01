@@ -4,8 +4,8 @@ class Bla extends Blu:
   def initialize():
     print("initialize is better than __init__")
 
-  # def self.class_method():
-  #  print("class methods are ok")
+  def self.class_method():
+    print("class methods are ok")
 
   def instance_method(that: That) -> [Char]:
     self.is_always_available()
