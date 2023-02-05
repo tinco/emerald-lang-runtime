@@ -22,6 +22,7 @@
 extern crate log;
 pub use emerald_lang_ast as ast;
 
+mod do_block;
 pub mod error;
 mod fstring;
 mod function;

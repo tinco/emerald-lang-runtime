@@ -1,7 +1,8 @@
 // auto-generated: "lalrpop 0.19.8"
-// sha3: 090f7fff8ad9ff750d6391e78f9fbf47b770ff9d724907bc59223cf9786d8bdc
+// sha3: 8cf81fa179ebbbe06d32f09decf68543e1588b1e9b1e0cd117b7e773fa466b5a
 use crate::{
     ast,
+    do_block::{StatementsOrDoBlock},
     error::{LexicalError, LexicalErrorType},
     function::{ArgumentList, parse_args, parse_params},
     lexer,
@@ -23,6 +24,7 @@ mod __parse__Top {
 
     use crate::{
     ast,
+    do_block::{StatementsOrDoBlock},
     error::{LexicalError, LexicalErrorType},
     function::{ArgumentList, parse_args, parse_params},
     lexer,
@@ -108,11 +110,11 @@ mod __parse__Top {
         Variant64((ast::Expr, ast::Expr)),
         Variant65(Vec<(Option<Box<ast::Expr>>, ast::Expr)>),
         Variant66(core::option::Option<Vec<(Option<Box<ast::Expr>>, ast::Expr)>>),
-        Variant67(ast::Suite),
-        Variant68(ast::DoMode),
-        Variant69(ast::Excepthandler),
-        Variant70(alloc::vec::Vec<ast::Excepthandler>),
-        Variant71(Vec<ast::Expr>),
+        Variant67(ast::DoMode),
+        Variant68(ast::Excepthandler),
+        Variant69(alloc::vec::Vec<ast::Excepthandler>),
+        Variant70(Vec<ast::Expr>),
+        Variant71(ast::Suite),
         Variant72(alloc::vec::Vec<ast::Suite>),
         Variant73(core::option::Option<(Option<(ast::Location, ast::Location, Option<String>)>, ast::Expr)>),
         Variant74(ast::Alias),
@@ -122,22 +124,23 @@ mod __parse__Top {
         Variant78((Option<usize>, Option<String>)),
         Variant79(Option<Box<ast::Arg>>),
         Variant80(core::option::Option<Vec<ast::Expr>>),
-        Variant81(Vec<String>),
-        Variant82(Vec<(ast::Arg, Option<ast::Expr>)>),
-        Variant83(Vec<ast::Withitem>),
-        Variant84((ast::Arg, Option<ast::Expr>)),
-        Variant85((Vec<(ast::Arg, Option<ast::Expr>)>, Vec<(ast::Arg, Option<ast::Expr>)>)),
-        Variant86((Option<Box<ast::Arg>>, Vec<ast::Arg>, Vec<ast::Expr>, Option<Box<ast::Arg>>)),
-        Variant87(ast::Comprehension),
-        Variant88(alloc::vec::Vec<ast::Comprehension>),
-        Variant89(Option<ast::Expr>),
-        Variant90(core::option::Option<Option<ast::Expr>>),
-        Variant91(ast::Mod),
-        Variant92(ast::Arg),
-        Variant93(core::option::Option<ast::Arg>),
-        Variant94(ast::Unaryop),
-        Variant95(ast::Withitem),
-        Variant96(alloc::vec::Vec<Vec<u8>>),
+        Variant81(StatementsOrDoBlock),
+        Variant82(Vec<String>),
+        Variant83(Vec<(ast::Arg, Option<ast::Expr>)>),
+        Variant84(Vec<ast::Withitem>),
+        Variant85((ast::Arg, Option<ast::Expr>)),
+        Variant86((Vec<(ast::Arg, Option<ast::Expr>)>, Vec<(ast::Arg, Option<ast::Expr>)>)),
+        Variant87((Option<Box<ast::Arg>>, Vec<ast::Arg>, Vec<ast::Expr>, Option<Box<ast::Arg>>)),
+        Variant88(ast::Comprehension),
+        Variant89(alloc::vec::Vec<ast::Comprehension>),
+        Variant90(Option<ast::Expr>),
+        Variant91(core::option::Option<Option<ast::Expr>>),
+        Variant92(ast::Mod),
+        Variant93(ast::Arg),
+        Variant94(core::option::Option<ast::Arg>),
+        Variant95(ast::Unaryop),
+        Variant96(ast::Withitem),
+        Variant97(alloc::vec::Vec<Vec<u8>>),
     }
     const __ACTION: &[i16] = &[
         // State 0
@@ -6360,10 +6363,10 @@ mod __parse__Top {
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant79(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1094::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -6379,11 +6382,11 @@ mod __parse__Top {
                 let __sym7 = __pop_Variant0(__symbols);
                 let __sym6 = __pop_Variant79(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1095::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -6399,12 +6402,12 @@ mod __parse__Top {
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant79(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1096::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -6420,13 +6423,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant0(__symbols);
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1097::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -6442,13 +6445,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant0(__symbols);
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1098::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -6464,14 +6467,14 @@ mod __parse__Top {
                 let __sym10 = __pop_Variant0(__symbols);
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym10.2.clone();
                 let __nt = match super::__action1099::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10) {
@@ -6489,7 +6492,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1100::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -6508,7 +6511,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1101::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -6528,7 +6531,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1102::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -6549,7 +6552,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1103::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -6570,7 +6573,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1104::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -6592,7 +6595,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1105::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -6609,10 +6612,10 @@ mod __parse__Top {
                 let __sym6 = __pop_Variant79(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1106::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -6629,11 +6632,11 @@ mod __parse__Top {
                 let __sym7 = __pop_Variant79(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant19(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1107::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -6650,12 +6653,12 @@ mod __parse__Top {
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
                 let __sym6 = __pop_Variant19(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1108::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -6672,13 +6675,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym10.2.clone();
                 let __nt = match super::__action1109::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10) {
@@ -6695,13 +6698,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym10.2.clone();
                 let __nt = match super::__action1110::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10) {
@@ -6718,14 +6721,14 @@ mod __parse__Top {
                 let __sym10 = __pop_Variant79(__symbols);
                 let __sym9 = __pop_Variant0(__symbols);
                 let __sym8 = __pop_Variant19(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym11.2.clone();
                 let __nt = match super::__action1111::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10, __sym11) {
@@ -6744,7 +6747,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1112::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -6764,7 +6767,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1113::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -6785,7 +6788,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1114::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -6807,7 +6810,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1115::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -6829,7 +6832,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1116::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -6852,7 +6855,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym10.2.clone();
                 let __nt = match super::__action1117::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10) {
@@ -6866,10 +6869,10 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ",", "*", TypedParameter, "," => ActionFn(1118);
                 assert!(__symbols.len() >= 5);
                 let __sym4 = __pop_Variant0(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1118::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -6883,11 +6886,11 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+, ",", "*", TypedParameter, "," => ActionFn(1119);
                 assert!(__symbols.len() >= 6);
                 let __sym5 = __pop_Variant0(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1119::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -6901,12 +6904,12 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ",", "/", ",", "*", TypedParameter, "," => ActionFn(1120);
                 assert!(__symbols.len() >= 7);
                 let __sym6 = __pop_Variant0(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1120::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -6920,13 +6923,13 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+, ",", "/", ",", "*", TypedParameter, "," => ActionFn(1121);
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1121::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -6940,13 +6943,13 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ",", "/", ("," ParameterDef<TypedParameter>)+, ",", "*", TypedParameter, "," => ActionFn(1122);
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1122::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -6960,14 +6963,14 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+, ",", "/", ("," ParameterDef<TypedParameter>)+, ",", "*", TypedParameter, "," => ActionFn(1123);
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant0(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1123::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -6983,7 +6986,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1124::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -7000,7 +7003,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1125::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -7018,7 +7021,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1126::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -7037,7 +7040,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1127::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -7056,7 +7059,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1128::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -7076,7 +7079,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1129::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -7091,10 +7094,10 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 6);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1130::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -7109,11 +7112,11 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 7);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant19(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1131::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -7128,12 +7131,12 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant0(__symbols);
                 let __sym6 = __pop_Variant19(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1132::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -7148,13 +7151,13 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1133::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -7169,13 +7172,13 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1134::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -7190,14 +7193,14 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 10);
                 let __sym9 = __pop_Variant0(__symbols);
                 let __sym8 = __pop_Variant19(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1135::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -7214,7 +7217,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1136::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -7232,7 +7235,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1137::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -7251,7 +7254,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1138::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -7271,7 +7274,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1139::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -7291,7 +7294,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1140::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -7312,7 +7315,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1141::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -7326,7 +7329,7 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, "," => ActionFn(1142);
                 assert!(__symbols.len() >= 2);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym1.2.clone();
                 let __nt = match super::__action1142::<>(__sym0, __sym1) {
@@ -7341,7 +7344,7 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 3);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym2.2.clone();
                 let __nt = match super::__action1143::<>(__sym0, __sym1, __sym2) {
@@ -7357,7 +7360,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1144::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -7374,7 +7377,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1145::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -7391,7 +7394,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1146::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -7409,7 +7412,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1147::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -7424,10 +7427,10 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 6);
                 let __sym5 = __pop_Variant79(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1148::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -7442,11 +7445,11 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 7);
                 let __sym6 = __pop_Variant79(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1149::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -7461,12 +7464,12 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant79(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1150::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -7481,13 +7484,13 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1151::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -7502,13 +7505,13 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1152::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -7523,14 +7526,14 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 10);
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1153::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -7547,7 +7550,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1154::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -7565,7 +7568,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1155::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -7584,7 +7587,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1156::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -7604,7 +7607,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1157::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -7624,7 +7627,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1158::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -7645,7 +7648,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1159::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -7661,10 +7664,10 @@ mod __parse__Top {
                 let __sym6 = __pop_Variant79(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1160::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -7680,11 +7683,11 @@ mod __parse__Top {
                 let __sym7 = __pop_Variant79(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant19(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1161::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -7700,12 +7703,12 @@ mod __parse__Top {
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
                 let __sym6 = __pop_Variant19(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1162::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -7721,13 +7724,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1163::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -7743,13 +7746,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1164::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -7765,14 +7768,14 @@ mod __parse__Top {
                 let __sym10 = __pop_Variant79(__symbols);
                 let __sym9 = __pop_Variant0(__symbols);
                 let __sym8 = __pop_Variant19(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym10.2.clone();
                 let __nt = match super::__action1165::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10) {
@@ -7790,7 +7793,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1166::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -7809,7 +7812,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1167::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -7829,7 +7832,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1168::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -7850,7 +7853,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1169::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -7871,7 +7874,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1170::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -7893,7 +7896,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1171::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -7906,10 +7909,10 @@ mod __parse__Top {
             574 => {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ",", "*", TypedParameter => ActionFn(1172);
                 assert!(__symbols.len() >= 4);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1172::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -7922,11 +7925,11 @@ mod __parse__Top {
             575 => {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+, ",", "*", TypedParameter => ActionFn(1173);
                 assert!(__symbols.len() >= 5);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1173::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -7939,12 +7942,12 @@ mod __parse__Top {
             576 => {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ",", "/", ",", "*", TypedParameter => ActionFn(1174);
                 assert!(__symbols.len() >= 6);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1174::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -7957,13 +7960,13 @@ mod __parse__Top {
             577 => {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+, ",", "/", ",", "*", TypedParameter => ActionFn(1175);
                 assert!(__symbols.len() >= 7);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1175::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -7976,13 +7979,13 @@ mod __parse__Top {
             578 => {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ",", "/", ("," ParameterDef<TypedParameter>)+, ",", "*", TypedParameter => ActionFn(1176);
                 assert!(__symbols.len() >= 7);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1176::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -7995,14 +7998,14 @@ mod __parse__Top {
             579 => {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+, ",", "/", ("," ParameterDef<TypedParameter>)+, ",", "*", TypedParameter => ActionFn(1177);
                 assert!(__symbols.len() >= 8);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1177::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -8017,7 +8020,7 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 3);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym2.2.clone();
                 let __nt = match super::__action1178::<>(__sym0, __sym1, __sym2) {
@@ -8033,7 +8036,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1179::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -8050,7 +8053,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1180::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -8068,7 +8071,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1181::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -8086,7 +8089,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1182::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -8105,7 +8108,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1183::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -8119,10 +8122,10 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ",", "*", TypedParameter, ("," ParameterDef<TypedParameter>)+ => ActionFn(1184);
                 assert!(__symbols.len() >= 5);
                 let __sym4 = __pop_Variant19(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1184::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -8136,11 +8139,11 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+, ",", "*", TypedParameter, ("," ParameterDef<TypedParameter>)+ => ActionFn(1185);
                 assert!(__symbols.len() >= 6);
                 let __sym5 = __pop_Variant19(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1185::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -8154,12 +8157,12 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ",", "/", ",", "*", TypedParameter, ("," ParameterDef<TypedParameter>)+ => ActionFn(1186);
                 assert!(__symbols.len() >= 7);
                 let __sym6 = __pop_Variant19(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1186::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -8173,13 +8176,13 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+, ",", "/", ",", "*", TypedParameter, ("," ParameterDef<TypedParameter>)+ => ActionFn(1187);
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1187::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -8193,13 +8196,13 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ",", "/", ("," ParameterDef<TypedParameter>)+, ",", "*", TypedParameter, ("," ParameterDef<TypedParameter>)+ => ActionFn(1188);
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1188::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -8213,14 +8216,14 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+, ",", "/", ("," ParameterDef<TypedParameter>)+, ",", "*", TypedParameter, ("," ParameterDef<TypedParameter>)+ => ActionFn(1189);
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant19(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1189::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -8236,7 +8239,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1190::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -8253,7 +8256,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1191::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -8271,7 +8274,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1192::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -8290,7 +8293,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1193::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -8309,7 +8312,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1194::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -8329,7 +8332,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1195::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -8341,7 +8344,7 @@ mod __parse__Top {
             }
             598 => {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter> => ActionFn(1196);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym0.2.clone();
                 let __nt = match super::__action1196::<>(__sym0) {
@@ -8355,7 +8358,7 @@ mod __parse__Top {
                 // ParameterList<TypedParameter> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+ => ActionFn(1197);
                 assert!(__symbols.len() >= 2);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym1.2.clone();
                 let __nt = match super::__action1197::<>(__sym0, __sym1) {
@@ -8370,7 +8373,7 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 3);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym2.2.clone();
                 let __nt = match super::__action1198::<>(__sym0, __sym1, __sym2) {
@@ -8386,7 +8389,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1199::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -8402,7 +8405,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1200::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -8419,7 +8422,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1201::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -8435,7 +8438,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant79(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1202::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -8452,7 +8455,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant79(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1203::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -8470,7 +8473,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1204::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -8489,7 +8492,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1205::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -8508,7 +8511,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1206::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -8528,7 +8531,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1207::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -8543,7 +8546,7 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 3);
                 let __sym2 = __pop_Variant79(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym2.2.clone();
                 let __nt = match super::__action1208::<>(__sym0, __sym1, __sym2) {
@@ -8559,7 +8562,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant79(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1209::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -8576,7 +8579,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1210::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -8594,7 +8597,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1211::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -8612,7 +8615,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1212::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -8631,7 +8634,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1213::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -8701,10 +8704,10 @@ mod __parse__Top {
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant79(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1214::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -8720,11 +8723,11 @@ mod __parse__Top {
                 let __sym7 = __pop_Variant0(__symbols);
                 let __sym6 = __pop_Variant79(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1215::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -8740,12 +8743,12 @@ mod __parse__Top {
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant79(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1216::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -8761,13 +8764,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant0(__symbols);
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1217::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -8783,13 +8786,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant0(__symbols);
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1218::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -8805,14 +8808,14 @@ mod __parse__Top {
                 let __sym10 = __pop_Variant0(__symbols);
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym10.2.clone();
                 let __nt = match super::__action1219::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10) {
@@ -8830,7 +8833,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1220::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -8849,7 +8852,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1221::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -8869,7 +8872,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1222::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -8890,7 +8893,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1223::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -8911,7 +8914,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1224::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -8933,7 +8936,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1225::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -8950,10 +8953,10 @@ mod __parse__Top {
                 let __sym6 = __pop_Variant79(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1226::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -8970,11 +8973,11 @@ mod __parse__Top {
                 let __sym7 = __pop_Variant79(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant19(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1227::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -8991,12 +8994,12 @@ mod __parse__Top {
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
                 let __sym6 = __pop_Variant19(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1228::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -9013,13 +9016,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym10.2.clone();
                 let __nt = match super::__action1229::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10) {
@@ -9036,13 +9039,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym10.2.clone();
                 let __nt = match super::__action1230::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10) {
@@ -9059,14 +9062,14 @@ mod __parse__Top {
                 let __sym10 = __pop_Variant79(__symbols);
                 let __sym9 = __pop_Variant0(__symbols);
                 let __sym8 = __pop_Variant19(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym11.2.clone();
                 let __nt = match super::__action1231::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10, __sym11) {
@@ -9085,7 +9088,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1232::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -9105,7 +9108,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1233::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -9126,7 +9129,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1234::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -9148,7 +9151,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1235::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -9170,7 +9173,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1236::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -9193,7 +9196,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym10.2.clone();
                 let __nt = match super::__action1237::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10) {
@@ -9207,10 +9210,10 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ",", "*", UntypedParameter, "," => ActionFn(1238);
                 assert!(__symbols.len() >= 5);
                 let __sym4 = __pop_Variant0(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1238::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -9224,11 +9227,11 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+, ",", "*", UntypedParameter, "," => ActionFn(1239);
                 assert!(__symbols.len() >= 6);
                 let __sym5 = __pop_Variant0(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1239::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -9242,12 +9245,12 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ",", "/", ",", "*", UntypedParameter, "," => ActionFn(1240);
                 assert!(__symbols.len() >= 7);
                 let __sym6 = __pop_Variant0(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1240::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -9261,13 +9264,13 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+, ",", "/", ",", "*", UntypedParameter, "," => ActionFn(1241);
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1241::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -9281,13 +9284,13 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ",", "/", ("," ParameterDef<UntypedParameter>)+, ",", "*", UntypedParameter, "," => ActionFn(1242);
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1242::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -9301,14 +9304,14 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+, ",", "/", ("," ParameterDef<UntypedParameter>)+, ",", "*", UntypedParameter, "," => ActionFn(1243);
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant0(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1243::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -9324,7 +9327,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1244::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -9341,7 +9344,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1245::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -9359,7 +9362,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1246::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -9378,7 +9381,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1247::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -9397,7 +9400,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1248::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -9417,7 +9420,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1249::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -9432,10 +9435,10 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 6);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1250::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -9450,11 +9453,11 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 7);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant19(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1251::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -9469,12 +9472,12 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant0(__symbols);
                 let __sym6 = __pop_Variant19(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1252::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -9489,13 +9492,13 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1253::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -9510,13 +9513,13 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1254::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -9531,14 +9534,14 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 10);
                 let __sym9 = __pop_Variant0(__symbols);
                 let __sym8 = __pop_Variant19(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1255::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -9555,7 +9558,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1256::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -9573,7 +9576,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1257::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -9592,7 +9595,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1258::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -9612,7 +9615,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1259::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -9632,7 +9635,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1260::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -9653,7 +9656,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1261::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -9667,7 +9670,7 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, "," => ActionFn(1262);
                 assert!(__symbols.len() >= 2);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym1.2.clone();
                 let __nt = match super::__action1262::<>(__sym0, __sym1) {
@@ -9682,7 +9685,7 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 3);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym2.2.clone();
                 let __nt = match super::__action1263::<>(__sym0, __sym1, __sym2) {
@@ -9698,7 +9701,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1264::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -9715,7 +9718,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1265::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -9732,7 +9735,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1266::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -9750,7 +9753,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1267::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -9765,10 +9768,10 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 6);
                 let __sym5 = __pop_Variant79(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1268::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -9783,11 +9786,11 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 7);
                 let __sym6 = __pop_Variant79(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1269::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -9802,12 +9805,12 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant79(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1270::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -9822,13 +9825,13 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1271::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -9843,13 +9846,13 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1272::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -9864,14 +9867,14 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 10);
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1273::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -9888,7 +9891,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1274::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -9906,7 +9909,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1275::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -9925,7 +9928,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1276::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -9945,7 +9948,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1277::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -9965,7 +9968,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1278::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -9986,7 +9989,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1279::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -10002,10 +10005,10 @@ mod __parse__Top {
                 let __sym6 = __pop_Variant79(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1280::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -10021,11 +10024,11 @@ mod __parse__Top {
                 let __sym7 = __pop_Variant79(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant19(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1281::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -10041,12 +10044,12 @@ mod __parse__Top {
                 let __sym8 = __pop_Variant79(__symbols);
                 let __sym7 = __pop_Variant0(__symbols);
                 let __sym6 = __pop_Variant19(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1282::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -10062,13 +10065,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1283::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -10084,13 +10087,13 @@ mod __parse__Top {
                 let __sym9 = __pop_Variant79(__symbols);
                 let __sym8 = __pop_Variant0(__symbols);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1284::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -10106,14 +10109,14 @@ mod __parse__Top {
                 let __sym10 = __pop_Variant79(__symbols);
                 let __sym9 = __pop_Variant0(__symbols);
                 let __sym8 = __pop_Variant19(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym10.2.clone();
                 let __nt = match super::__action1285::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10) {
@@ -10131,7 +10134,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1286::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -10150,7 +10153,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1287::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -10170,7 +10173,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1288::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -10191,7 +10194,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1289::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -10212,7 +10215,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1290::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -10234,7 +10237,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym9.2.clone();
                 let __nt = match super::__action1291::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9) {
@@ -10247,10 +10250,10 @@ mod __parse__Top {
             712 => {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ",", "*", UntypedParameter => ActionFn(1292);
                 assert!(__symbols.len() >= 4);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1292::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -10263,11 +10266,11 @@ mod __parse__Top {
             713 => {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+, ",", "*", UntypedParameter => ActionFn(1293);
                 assert!(__symbols.len() >= 5);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1293::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -10280,12 +10283,12 @@ mod __parse__Top {
             714 => {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ",", "/", ",", "*", UntypedParameter => ActionFn(1294);
                 assert!(__symbols.len() >= 6);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1294::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -10298,13 +10301,13 @@ mod __parse__Top {
             715 => {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+, ",", "/", ",", "*", UntypedParameter => ActionFn(1295);
                 assert!(__symbols.len() >= 7);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1295::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -10317,13 +10320,13 @@ mod __parse__Top {
             716 => {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ",", "/", ("," ParameterDef<UntypedParameter>)+, ",", "*", UntypedParameter => ActionFn(1296);
                 assert!(__symbols.len() >= 7);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1296::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -10336,14 +10339,14 @@ mod __parse__Top {
             717 => {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+, ",", "/", ("," ParameterDef<UntypedParameter>)+, ",", "*", UntypedParameter => ActionFn(1297);
                 assert!(__symbols.len() >= 8);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1297::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -10358,7 +10361,7 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 3);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym2.2.clone();
                 let __nt = match super::__action1298::<>(__sym0, __sym1, __sym2) {
@@ -10374,7 +10377,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1299::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -10391,7 +10394,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1300::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -10409,7 +10412,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1301::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -10427,7 +10430,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1302::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -10446,7 +10449,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1303::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -10460,10 +10463,10 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ",", "*", UntypedParameter, ("," ParameterDef<UntypedParameter>)+ => ActionFn(1304);
                 assert!(__symbols.len() >= 5);
                 let __sym4 = __pop_Variant19(__symbols);
-                let __sym3 = __pop_Variant92(__symbols);
+                let __sym3 = __pop_Variant93(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1304::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -10477,11 +10480,11 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+, ",", "*", UntypedParameter, ("," ParameterDef<UntypedParameter>)+ => ActionFn(1305);
                 assert!(__symbols.len() >= 6);
                 let __sym5 = __pop_Variant19(__symbols);
-                let __sym4 = __pop_Variant92(__symbols);
+                let __sym4 = __pop_Variant93(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1305::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -10495,12 +10498,12 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ",", "/", ",", "*", UntypedParameter, ("," ParameterDef<UntypedParameter>)+ => ActionFn(1306);
                 assert!(__symbols.len() >= 7);
                 let __sym6 = __pop_Variant19(__symbols);
-                let __sym5 = __pop_Variant92(__symbols);
+                let __sym5 = __pop_Variant93(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1306::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -10514,13 +10517,13 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+, ",", "/", ",", "*", UntypedParameter, ("," ParameterDef<UntypedParameter>)+ => ActionFn(1307);
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1307::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -10534,13 +10537,13 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ",", "/", ("," ParameterDef<UntypedParameter>)+, ",", "*", UntypedParameter, ("," ParameterDef<UntypedParameter>)+ => ActionFn(1308);
                 assert!(__symbols.len() >= 8);
                 let __sym7 = __pop_Variant19(__symbols);
-                let __sym6 = __pop_Variant92(__symbols);
+                let __sym6 = __pop_Variant93(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant0(__symbols);
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1308::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -10554,14 +10557,14 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+, ",", "/", ("," ParameterDef<UntypedParameter>)+, ",", "*", UntypedParameter, ("," ParameterDef<UntypedParameter>)+ => ActionFn(1309);
                 assert!(__symbols.len() >= 9);
                 let __sym8 = __pop_Variant19(__symbols);
-                let __sym7 = __pop_Variant92(__symbols);
+                let __sym7 = __pop_Variant93(__symbols);
                 let __sym6 = __pop_Variant0(__symbols);
                 let __sym5 = __pop_Variant0(__symbols);
                 let __sym4 = __pop_Variant19(__symbols);
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym8.2.clone();
                 let __nt = match super::__action1309::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8) {
@@ -10577,7 +10580,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1310::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -10594,7 +10597,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1311::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -10612,7 +10615,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1312::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -10631,7 +10634,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1313::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -10650,7 +10653,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1314::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -10670,7 +10673,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1315::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -10682,7 +10685,7 @@ mod __parse__Top {
             }
             736 => {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter> => ActionFn(1316);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym0.2.clone();
                 let __nt = match super::__action1316::<>(__sym0) {
@@ -10696,7 +10699,7 @@ mod __parse__Top {
                 // ParameterList<UntypedParameter> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+ => ActionFn(1317);
                 assert!(__symbols.len() >= 2);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym1.2.clone();
                 let __nt = match super::__action1317::<>(__sym0, __sym1) {
@@ -10711,7 +10714,7 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 3);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym2.2.clone();
                 let __nt = match super::__action1318::<>(__sym0, __sym1, __sym2) {
@@ -10727,7 +10730,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1319::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -10743,7 +10746,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1320::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -10760,7 +10763,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1321::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -10776,7 +10779,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant79(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1322::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -10793,7 +10796,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant79(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1323::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -10811,7 +10814,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1324::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -10830,7 +10833,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1325::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -10849,7 +10852,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1326::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -10869,7 +10872,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym7.2.clone();
                 let __nt = match super::__action1327::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7) {
@@ -10884,7 +10887,7 @@ mod __parse__Top {
                 assert!(__symbols.len() >= 3);
                 let __sym2 = __pop_Variant79(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym2.2.clone();
                 let __nt = match super::__action1328::<>(__sym0, __sym1, __sym2) {
@@ -10900,7 +10903,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant79(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym3.2.clone();
                 let __nt = match super::__action1329::<>(__sym0, __sym1, __sym2, __sym3) {
@@ -10917,7 +10920,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym4.2.clone();
                 let __nt = match super::__action1330::<>(__sym0, __sym1, __sym2, __sym3, __sym4) {
@@ -10935,7 +10938,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1331::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -10953,7 +10956,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant19(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym5.2.clone();
                 let __nt = match super::__action1332::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
@@ -10972,7 +10975,7 @@ mod __parse__Top {
                 let __sym3 = __pop_Variant0(__symbols);
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant19(__symbols);
-                let __sym0 = __pop_Variant84(__symbols);
+                let __sym0 = __pop_Variant85(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym6.2.clone();
                 let __nt = match super::__action1333::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6) {
@@ -11419,7 +11422,7 @@ mod __parse__Top {
             }
             899 => {
                 // __Top = Top => ActionFn(0);
-                let __sym0 = __pop_Variant91(__symbols);
+                let __sym0 = __pop_Variant92(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym0.2.clone();
                 let __nt = super::__action0::<>(__sym0);
@@ -11454,13 +11457,13 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant86<
+    fn __pop_Variant87<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, (Option<Box<ast::Arg>>, Vec<ast::Arg>, Vec<ast::Expr>, Option<Box<ast::Arg>>), ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant86(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant87(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -11504,23 +11507,23 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant85<
+    fn __pop_Variant86<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, (Vec<(ast::Arg, Option<ast::Expr>)>, Vec<(ast::Arg, Option<ast::Expr>)>), ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant85(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant86(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant84<
+    fn __pop_Variant85<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, (ast::Arg, Option<ast::Expr>), ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant84(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant85(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -11744,13 +11747,23 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant89<
+    fn __pop_Variant90<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, Option<ast::Expr>, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant89(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant90(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant81<
+    >(
+        __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
+    ) -> (ast::Location, StatementsOrDoBlock, ast::Location)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant81(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -11784,23 +11797,23 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant82<
+    fn __pop_Variant83<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, Vec<(ast::Arg, Option<ast::Expr>)>, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant82(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant83(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant81<
+    fn __pop_Variant82<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, Vec<String>, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant81(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant82(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -11824,23 +11837,23 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant71<
+    fn __pop_Variant70<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, Vec<ast::Expr>, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant71(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant70(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant83<
+    fn __pop_Variant84<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, Vec<ast::Withitem>, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant83(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant84(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -11964,33 +11977,33 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant96<
+    fn __pop_Variant97<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, alloc::vec::Vec<Vec<u8>>, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant96(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant97(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant88<
+    fn __pop_Variant89<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, alloc::vec::Vec<ast::Comprehension>, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant88(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant89(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant70<
+    fn __pop_Variant69<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, alloc::vec::Vec<ast::Excepthandler>, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant70(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant69(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -12044,13 +12057,13 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant92<
+    fn __pop_Variant93<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, ast::Arg, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant92(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant93(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -12074,13 +12087,13 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant87<
+    fn __pop_Variant88<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, ast::Comprehension, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant87(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant88(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -12094,23 +12107,23 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant68<
+    fn __pop_Variant67<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, ast::DoMode, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant68(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant67(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant69<
+    fn __pop_Variant68<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, ast::Excepthandler, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant69(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant68(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -12144,13 +12157,13 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant91<
+    fn __pop_Variant92<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, ast::Mod, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant91(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant92(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -12174,33 +12187,33 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant67<
+    fn __pop_Variant71<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, ast::Suite, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant67(__v), __r)) => (__l, __v, __r),
-            _ => __symbol_type_mismatch()
-        }
-    }
-    fn __pop_Variant94<
-    >(
-        __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
-    ) -> (ast::Location, ast::Unaryop, ast::Location)
-     {
-        match __symbols.pop() {
-            Some((__l, __Symbol::Variant94(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant71(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
     fn __pop_Variant95<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
-    ) -> (ast::Location, ast::Withitem, ast::Location)
+    ) -> (ast::Location, ast::Unaryop, ast::Location)
      {
         match __symbols.pop() {
             Some((__l, __Symbol::Variant95(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant96<
+    >(
+        __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
+    ) -> (ast::Location, ast::Withitem, ast::Location)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant96(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -12304,13 +12317,13 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant90<
+    fn __pop_Variant91<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, core::option::Option<Option<ast::Expr>>, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant90(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant91(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -12344,13 +12357,13 @@ mod __parse__Top {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant93<
+    fn __pop_Variant94<
     >(
         __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>
     ) -> (ast::Location, core::option::Option<ast::Arg>, ast::Location)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant93(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant94(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -13156,7 +13169,7 @@ mod __parse__Top {
     {
         // ("," ParameterDef<TypedParameter>) = ",", ParameterDef<TypedParameter> => ActionFn(426);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant84(__symbols);
+        let __sym1 = __pop_Variant85(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -13202,7 +13215,7 @@ mod __parse__Top {
     {
         // ("," ParameterDef<TypedParameter>)+ = ",", ParameterDef<TypedParameter> => ActionFn(733);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant84(__symbols);
+        let __sym1 = __pop_Variant85(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -13219,7 +13232,7 @@ mod __parse__Top {
     {
         // ("," ParameterDef<TypedParameter>)+ = ("," ParameterDef<TypedParameter>)+, ",", ParameterDef<TypedParameter> => ActionFn(734);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant84(__symbols);
+        let __sym2 = __pop_Variant85(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant19(__symbols);
         let __start = __sym0.0.clone();
@@ -13237,7 +13250,7 @@ mod __parse__Top {
     {
         // ("," ParameterDef<UntypedParameter>) = ",", ParameterDef<UntypedParameter> => ActionFn(416);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant84(__symbols);
+        let __sym1 = __pop_Variant85(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -13283,7 +13296,7 @@ mod __parse__Top {
     {
         // ("," ParameterDef<UntypedParameter>)+ = ",", ParameterDef<UntypedParameter> => ActionFn(743);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant84(__symbols);
+        let __sym1 = __pop_Variant85(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -13300,7 +13313,7 @@ mod __parse__Top {
     {
         // ("," ParameterDef<UntypedParameter>)+ = ("," ParameterDef<UntypedParameter>)+, ",", ParameterDef<UntypedParameter> => ActionFn(744);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant84(__symbols);
+        let __sym2 = __pop_Variant85(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant19(__symbols);
         let __start = __sym0.0.clone();
@@ -13320,7 +13333,7 @@ mod __parse__Top {
         assert!(__symbols.len() >= 5);
         let __sym4 = __pop_Variant79(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13360,7 +13373,7 @@ mod __parse__Top {
         let __sym5 = __pop_Variant79(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant19(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13398,7 +13411,7 @@ mod __parse__Top {
     {
         // ("," ParameterListStarArgs<TypedParameter>) = ",", "*", TypedParameter => ActionFn(767);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13434,7 +13447,7 @@ mod __parse__Top {
         // ("," ParameterListStarArgs<TypedParameter>) = ",", "*", TypedParameter, ("," ParameterDef<TypedParameter>)+ => ActionFn(769);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant19(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13472,7 +13485,7 @@ mod __parse__Top {
         assert!(__symbols.len() >= 5);
         let __sym4 = __pop_Variant79(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13512,7 +13525,7 @@ mod __parse__Top {
         let __sym5 = __pop_Variant79(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant19(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13550,7 +13563,7 @@ mod __parse__Top {
     {
         // ("," ParameterListStarArgs<TypedParameter>)? = ",", "*", TypedParameter => ActionFn(791);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13586,7 +13599,7 @@ mod __parse__Top {
         // ("," ParameterListStarArgs<TypedParameter>)? = ",", "*", TypedParameter, ("," ParameterDef<TypedParameter>)+ => ActionFn(793);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant19(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13638,7 +13651,7 @@ mod __parse__Top {
         assert!(__symbols.len() >= 5);
         let __sym4 = __pop_Variant79(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13678,7 +13691,7 @@ mod __parse__Top {
         let __sym5 = __pop_Variant79(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant19(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13716,7 +13729,7 @@ mod __parse__Top {
     {
         // ("," ParameterListStarArgs<UntypedParameter>) = ",", "*", UntypedParameter => ActionFn(827);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13752,7 +13765,7 @@ mod __parse__Top {
         // ("," ParameterListStarArgs<UntypedParameter>) = ",", "*", UntypedParameter, ("," ParameterDef<UntypedParameter>)+ => ActionFn(829);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant19(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13790,7 +13803,7 @@ mod __parse__Top {
         assert!(__symbols.len() >= 5);
         let __sym4 = __pop_Variant79(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13830,7 +13843,7 @@ mod __parse__Top {
         let __sym5 = __pop_Variant79(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant19(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13868,7 +13881,7 @@ mod __parse__Top {
     {
         // ("," ParameterListStarArgs<UntypedParameter>)? = ",", "*", UntypedParameter => ActionFn(851);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -13904,7 +13917,7 @@ mod __parse__Top {
         // ("," ParameterListStarArgs<UntypedParameter>)? = ",", "*", UntypedParameter, ("," ParameterDef<UntypedParameter>)+ => ActionFn(853);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant19(__symbols);
-        let __sym2 = __pop_Variant92(__symbols);
+        let __sym2 = __pop_Variant93(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -14245,7 +14258,7 @@ mod __parse__Top {
     {
         // ("," WithItem) = ",", WithItem => ActionFn(358);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant95(__symbols);
+        let __sym1 = __pop_Variant96(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -14291,7 +14304,7 @@ mod __parse__Top {
     {
         // ("," WithItem)+ = ",", WithItem => ActionFn(890);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant95(__symbols);
+        let __sym1 = __pop_Variant96(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -14308,7 +14321,7 @@ mod __parse__Top {
     {
         // ("," WithItem)+ = ("," WithItem)+, ",", WithItem => ActionFn(891);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant95(__symbols);
+        let __sym2 = __pop_Variant96(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant24(__symbols);
         let __start = __sym0.0.clone();
@@ -14808,7 +14821,7 @@ mod __parse__Top {
     {
         // ("else" ":" Suite) = "else", ":", Suite => ActionFn(289);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant67(__symbols);
+        let __sym2 = __pop_Variant71(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -14826,7 +14839,7 @@ mod __parse__Top {
     {
         // ("else" ":" Suite)? = "else", ":", Suite => ActionFn(921);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant67(__symbols);
+        let __sym2 = __pop_Variant71(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -14906,7 +14919,7 @@ mod __parse__Top {
     {
         // ("finally" ":" Suite) = "finally", ":", Suite => ActionFn(282);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant67(__symbols);
+        let __sym2 = __pop_Variant71(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -14924,7 +14937,7 @@ mod __parse__Top {
     {
         // ("finally" ":" Suite)? = "finally", ":", Suite => ActionFn(935);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant67(__symbols);
+        let __sym2 = __pop_Variant71(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -15214,7 +15227,7 @@ mod __parse__Top {
     {
         // (@L "elif" NamedExpressionTest ":" Suite @R) = "elif", NamedExpressionTest, ":", Suite => ActionFn(602);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant52(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
@@ -15262,7 +15275,7 @@ mod __parse__Top {
     {
         // (@L "elif" NamedExpressionTest ":" Suite @R)+ = "elif", NamedExpressionTest, ":", Suite => ActionFn(955);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant52(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
@@ -15281,7 +15294,7 @@ mod __parse__Top {
     {
         // (@L "elif" NamedExpressionTest ":" Suite @R)+ = (@L "elif" NamedExpressionTest ":" Suite @R)+, "elif", NamedExpressionTest, ":", Suite => ActionFn(956);
         assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant67(__symbols);
+        let __sym4 = __pop_Variant71(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant52(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
@@ -15940,7 +15953,7 @@ mod __parse__Top {
         // Atom = "[", ListLiteralValues, "]" => ActionFn(1028);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant71(__symbols);
+        let __sym1 = __pop_Variant70(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
@@ -16085,7 +16098,7 @@ mod __parse__Top {
         // Atom = "{", SetLiteralValues, "}" => ActionFn(619);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant71(__symbols);
+        let __sym1 = __pop_Variant70(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
@@ -16478,7 +16491,7 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // Bytes = bytes+ => ActionFn(196);
-        let __sym0 = __pop_Variant96(__symbols);
+        let __sym0 = __pop_Variant97(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action196::<>(__sym0);
@@ -16509,7 +16522,7 @@ mod __parse__Top {
     {
         // ClassDef = "class", Identifier, "extends", ClassArgument, ":", Suite => ActionFn(1002);
         assert!(__symbols.len() >= 6);
-        let __sym5 = __pop_Variant67(__symbols);
+        let __sym5 = __pop_Variant71(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant57(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
@@ -16530,7 +16543,7 @@ mod __parse__Top {
     {
         // ClassDef = Decorator+, "class", Identifier, "extends", ClassArgument, ":", Suite => ActionFn(1003);
         assert!(__symbols.len() >= 7);
-        let __sym6 = __pop_Variant67(__symbols);
+        let __sym6 = __pop_Variant71(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant57(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
@@ -16552,7 +16565,7 @@ mod __parse__Top {
     {
         // ClassDef = "class", Identifier, ":", Suite => ActionFn(1004);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant5(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
@@ -16571,7 +16584,7 @@ mod __parse__Top {
     {
         // ClassDef = Decorator+, "class", Identifier, ":", Suite => ActionFn(1005);
         assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant67(__symbols);
+        let __sym4 = __pop_Variant71(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant5(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
@@ -16651,7 +16664,7 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // CompFor = SingleForComprehension+ => ActionFn(183);
-        let __sym0 = __pop_Variant88(__symbols);
+        let __sym0 = __pop_Variant89(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action183::<>(__sym0);
@@ -17064,7 +17077,7 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // Constant = bytes+ => ActionFn(192);
-        let __sym0 = __pop_Variant96(__symbols);
+        let __sym0 = __pop_Variant97(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action192::<>(__sym0);
@@ -17204,7 +17217,7 @@ mod __parse__Top {
     {
         // DelStatement = "del", ExpressionList2 => ActionFn(634);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant71(__symbols);
+        let __sym1 = __pop_Variant70(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -17367,14 +17380,14 @@ mod __parse__Top {
     {
         // DoBlock = DoOp, ParameterList<UntypedParameter>, ":", Suite => ActionFn(1334);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant47(__symbols);
-        let __sym0 = __pop_Variant68(__symbols);
+        let __sym0 = __pop_Variant67(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action1334::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant52(__nt), __end));
         (4, 135)
     }
     pub(crate) fn __reduce310<
@@ -17386,13 +17399,13 @@ mod __parse__Top {
     {
         // DoBlock = DoOp, ":", Suite => ActionFn(1335);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant67(__symbols);
+        let __sym2 = __pop_Variant71(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant68(__symbols);
+        let __sym0 = __pop_Variant67(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action1335::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant52(__nt), __end));
         (3, 135)
     }
     pub(crate) fn __reduce311<
@@ -17407,7 +17420,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action147::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant68(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
         (1, 136)
     }
     pub(crate) fn __reduce312<
@@ -17422,7 +17435,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action148::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant68(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
         (1, 136)
     }
     pub(crate) fn __reduce313<
@@ -17466,14 +17479,14 @@ mod __parse__Top {
     {
         // ExceptClause = "except", Test, ":", Suite => ActionFn(1340);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant52(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action1340::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant69(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant68(__nt), __end));
         (4, 138)
     }
     pub(crate) fn __reduce316<
@@ -17485,13 +17498,13 @@ mod __parse__Top {
     {
         // ExceptClause = "except", ":", Suite => ActionFn(1341);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant67(__symbols);
+        let __sym2 = __pop_Variant71(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action1341::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant69(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant68(__nt), __end));
         (3, 138)
     }
     pub(crate) fn __reduce317<
@@ -17503,7 +17516,7 @@ mod __parse__Top {
     {
         // ExceptClause = "except", Test, "as", Identifier, ":", Suite => ActionFn(983);
         assert!(__symbols.len() >= 6);
-        let __sym5 = __pop_Variant67(__symbols);
+        let __sym5 = __pop_Variant71(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant5(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
@@ -17512,7 +17525,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym5.2.clone();
         let __nt = super::__action983::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5);
-        __symbols.push((__start, __Symbol::Variant69(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant68(__nt), __end));
         (6, 138)
     }
     pub(crate) fn __reduce318<
@@ -17523,11 +17536,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // ExceptClause+ = ExceptClause => ActionFn(283);
-        let __sym0 = __pop_Variant69(__symbols);
+        let __sym0 = __pop_Variant68(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action283::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant69(__nt), __end));
         (1, 139)
     }
     pub(crate) fn __reduce319<
@@ -17539,12 +17552,12 @@ mod __parse__Top {
     {
         // ExceptClause+ = ExceptClause+, ExceptClause => ActionFn(284);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant69(__symbols);
-        let __sym0 = __pop_Variant70(__symbols);
+        let __sym1 = __pop_Variant68(__symbols);
+        let __sym0 = __pop_Variant69(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action284::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant69(__nt), __end));
         (2, 139)
     }
     pub(crate) fn __reduce320<
@@ -17609,7 +17622,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action1034::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (2, 142)
     }
     pub(crate) fn __reduce324<
@@ -17627,7 +17640,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action1035::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (3, 142)
     }
     pub(crate) fn __reduce325<
@@ -17642,7 +17655,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action1036::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (1, 142)
     }
     pub(crate) fn __reduce326<
@@ -17659,7 +17672,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action1037::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (2, 142)
     }
     pub(crate) fn __reduce327<
@@ -17804,7 +17817,7 @@ mod __parse__Top {
         // Factor = UnaryOp, Factor => ActionFn(642);
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant52(__symbols);
-        let __sym0 = __pop_Variant94(__symbols);
+        let __sym0 = __pop_Variant95(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action642::<>(__sym0, __sym1);
@@ -17834,11 +17847,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // FileLine = Statement => ActionFn(5);
-        let __sym0 = __pop_Variant67(__symbols);
+        let __sym0 = __pop_Variant71(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action5::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
         (1, 147)
     }
     pub(crate) fn __reduce338<
@@ -17853,7 +17866,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action6::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
         (1, 147)
     }
     pub(crate) fn __reduce339<
@@ -17893,7 +17906,7 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // FileLine+ = FileLine => ActionFn(336);
-        let __sym0 = __pop_Variant67(__symbols);
+        let __sym0 = __pop_Variant71(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action336::<>(__sym0);
@@ -17909,7 +17922,7 @@ mod __parse__Top {
     {
         // FileLine+ = FileLine+, FileLine => ActionFn(337);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant67(__symbols);
+        let __sym1 = __pop_Variant71(__symbols);
         let __sym0 = __pop_Variant72(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -18018,10 +18031,10 @@ mod __parse__Top {
     {
         // ForStatement = "async", "for", ExpressionList, "in", GenericList<TestOrStarExpr>, ":", Suite, "else", ":", Suite => ActionFn(1352);
         assert!(__symbols.len() >= 10);
-        let __sym9 = __pop_Variant67(__symbols);
+        let __sym9 = __pop_Variant71(__symbols);
         let __sym8 = __pop_Variant0(__symbols);
         let __sym7 = __pop_Variant0(__symbols);
-        let __sym6 = __pop_Variant67(__symbols);
+        let __sym6 = __pop_Variant71(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant52(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
@@ -18043,7 +18056,7 @@ mod __parse__Top {
     {
         // ForStatement = "async", "for", ExpressionList, "in", GenericList<TestOrStarExpr>, ":", Suite => ActionFn(1353);
         assert!(__symbols.len() >= 7);
-        let __sym6 = __pop_Variant67(__symbols);
+        let __sym6 = __pop_Variant71(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant52(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
@@ -18065,10 +18078,10 @@ mod __parse__Top {
     {
         // ForStatement = "for", ExpressionList, "in", GenericList<TestOrStarExpr>, ":", Suite, "else", ":", Suite => ActionFn(1354);
         assert!(__symbols.len() >= 9);
-        let __sym8 = __pop_Variant67(__symbols);
+        let __sym8 = __pop_Variant71(__symbols);
         let __sym7 = __pop_Variant0(__symbols);
         let __sym6 = __pop_Variant0(__symbols);
-        let __sym5 = __pop_Variant67(__symbols);
+        let __sym5 = __pop_Variant71(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant52(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
@@ -18089,7 +18102,7 @@ mod __parse__Top {
     {
         // ForStatement = "for", ExpressionList, "in", GenericList<TestOrStarExpr>, ":", Suite => ActionFn(1355);
         assert!(__symbols.len() >= 6);
-        let __sym5 = __pop_Variant67(__symbols);
+        let __sym5 = __pop_Variant71(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant52(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
@@ -18110,7 +18123,7 @@ mod __parse__Top {
     {
         // FuncDef = "async", "def", Identifier, ".", Identifier, Parameters, "->", Test, ":", Suite => ActionFn(1006);
         assert!(__symbols.len() >= 10);
-        let __sym9 = __pop_Variant67(__symbols);
+        let __sym9 = __pop_Variant71(__symbols);
         let __sym8 = __pop_Variant0(__symbols);
         let __sym7 = __pop_Variant52(__symbols);
         let __sym6 = __pop_Variant0(__symbols);
@@ -18135,7 +18148,7 @@ mod __parse__Top {
     {
         // FuncDef = Decorator+, "async", "def", Identifier, ".", Identifier, Parameters, "->", Test, ":", Suite => ActionFn(1007);
         assert!(__symbols.len() >= 11);
-        let __sym10 = __pop_Variant67(__symbols);
+        let __sym10 = __pop_Variant71(__symbols);
         let __sym9 = __pop_Variant0(__symbols);
         let __sym8 = __pop_Variant52(__symbols);
         let __sym7 = __pop_Variant0(__symbols);
@@ -18161,7 +18174,7 @@ mod __parse__Top {
     {
         // FuncDef = "async", "def", Identifier, Parameters, "->", Test, ":", Suite => ActionFn(1008);
         assert!(__symbols.len() >= 8);
-        let __sym7 = __pop_Variant67(__symbols);
+        let __sym7 = __pop_Variant71(__symbols);
         let __sym6 = __pop_Variant0(__symbols);
         let __sym5 = __pop_Variant52(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
@@ -18184,7 +18197,7 @@ mod __parse__Top {
     {
         // FuncDef = Decorator+, "async", "def", Identifier, Parameters, "->", Test, ":", Suite => ActionFn(1009);
         assert!(__symbols.len() >= 9);
-        let __sym8 = __pop_Variant67(__symbols);
+        let __sym8 = __pop_Variant71(__symbols);
         let __sym7 = __pop_Variant0(__symbols);
         let __sym6 = __pop_Variant52(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
@@ -18208,7 +18221,7 @@ mod __parse__Top {
     {
         // FuncDef = "async", "def", Identifier, ".", Identifier, Parameters, ":", Suite => ActionFn(1010);
         assert!(__symbols.len() >= 8);
-        let __sym7 = __pop_Variant67(__symbols);
+        let __sym7 = __pop_Variant71(__symbols);
         let __sym6 = __pop_Variant0(__symbols);
         let __sym5 = __pop_Variant47(__symbols);
         let __sym4 = __pop_Variant5(__symbols);
@@ -18231,7 +18244,7 @@ mod __parse__Top {
     {
         // FuncDef = Decorator+, "async", "def", Identifier, ".", Identifier, Parameters, ":", Suite => ActionFn(1011);
         assert!(__symbols.len() >= 9);
-        let __sym8 = __pop_Variant67(__symbols);
+        let __sym8 = __pop_Variant71(__symbols);
         let __sym7 = __pop_Variant0(__symbols);
         let __sym6 = __pop_Variant47(__symbols);
         let __sym5 = __pop_Variant5(__symbols);
@@ -18255,7 +18268,7 @@ mod __parse__Top {
     {
         // FuncDef = "async", "def", Identifier, Parameters, ":", Suite => ActionFn(1012);
         assert!(__symbols.len() >= 6);
-        let __sym5 = __pop_Variant67(__symbols);
+        let __sym5 = __pop_Variant71(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant47(__symbols);
         let __sym2 = __pop_Variant5(__symbols);
@@ -18276,7 +18289,7 @@ mod __parse__Top {
     {
         // FuncDef = Decorator+, "async", "def", Identifier, Parameters, ":", Suite => ActionFn(1013);
         assert!(__symbols.len() >= 7);
-        let __sym6 = __pop_Variant67(__symbols);
+        let __sym6 = __pop_Variant71(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant47(__symbols);
         let __sym3 = __pop_Variant5(__symbols);
@@ -18298,7 +18311,7 @@ mod __parse__Top {
     {
         // FuncDef = "def", Identifier, ".", Identifier, Parameters, "->", Test, ":", Suite => ActionFn(1014);
         assert!(__symbols.len() >= 9);
-        let __sym8 = __pop_Variant67(__symbols);
+        let __sym8 = __pop_Variant71(__symbols);
         let __sym7 = __pop_Variant0(__symbols);
         let __sym6 = __pop_Variant52(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
@@ -18322,7 +18335,7 @@ mod __parse__Top {
     {
         // FuncDef = Decorator+, "def", Identifier, ".", Identifier, Parameters, "->", Test, ":", Suite => ActionFn(1015);
         assert!(__symbols.len() >= 10);
-        let __sym9 = __pop_Variant67(__symbols);
+        let __sym9 = __pop_Variant71(__symbols);
         let __sym8 = __pop_Variant0(__symbols);
         let __sym7 = __pop_Variant52(__symbols);
         let __sym6 = __pop_Variant0(__symbols);
@@ -18347,7 +18360,7 @@ mod __parse__Top {
     {
         // FuncDef = "def", Identifier, Parameters, "->", Test, ":", Suite => ActionFn(1016);
         assert!(__symbols.len() >= 7);
-        let __sym6 = __pop_Variant67(__symbols);
+        let __sym6 = __pop_Variant71(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant52(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
@@ -18369,7 +18382,7 @@ mod __parse__Top {
     {
         // FuncDef = Decorator+, "def", Identifier, Parameters, "->", Test, ":", Suite => ActionFn(1017);
         assert!(__symbols.len() >= 8);
-        let __sym7 = __pop_Variant67(__symbols);
+        let __sym7 = __pop_Variant71(__symbols);
         let __sym6 = __pop_Variant0(__symbols);
         let __sym5 = __pop_Variant52(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
@@ -18392,7 +18405,7 @@ mod __parse__Top {
     {
         // FuncDef = "def", Identifier, ".", Identifier, Parameters, ":", Suite => ActionFn(1018);
         assert!(__symbols.len() >= 7);
-        let __sym6 = __pop_Variant67(__symbols);
+        let __sym6 = __pop_Variant71(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant47(__symbols);
         let __sym3 = __pop_Variant5(__symbols);
@@ -18414,7 +18427,7 @@ mod __parse__Top {
     {
         // FuncDef = Decorator+, "def", Identifier, ".", Identifier, Parameters, ":", Suite => ActionFn(1019);
         assert!(__symbols.len() >= 8);
-        let __sym7 = __pop_Variant67(__symbols);
+        let __sym7 = __pop_Variant71(__symbols);
         let __sym6 = __pop_Variant0(__symbols);
         let __sym5 = __pop_Variant47(__symbols);
         let __sym4 = __pop_Variant5(__symbols);
@@ -18437,7 +18450,7 @@ mod __parse__Top {
     {
         // FuncDef = "def", Identifier, Parameters, ":", Suite => ActionFn(1020);
         assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant67(__symbols);
+        let __sym4 = __pop_Variant71(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant47(__symbols);
         let __sym1 = __pop_Variant5(__symbols);
@@ -18457,7 +18470,7 @@ mod __parse__Top {
     {
         // FuncDef = Decorator+, "def", Identifier, Parameters, ":", Suite => ActionFn(1021);
         assert!(__symbols.len() >= 6);
-        let __sym5 = __pop_Variant67(__symbols);
+        let __sym5 = __pop_Variant71(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant47(__symbols);
         let __sym2 = __pop_Variant5(__symbols);
@@ -18842,10 +18855,10 @@ mod __parse__Top {
     {
         // IfStatement = "if", NamedExpressionTest, ":", Suite, "else", ":", Suite => ActionFn(957);
         assert!(__symbols.len() >= 7);
-        let __sym6 = __pop_Variant67(__symbols);
+        let __sym6 = __pop_Variant71(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant52(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
@@ -18864,11 +18877,11 @@ mod __parse__Top {
     {
         // IfStatement = "if", NamedExpressionTest, ":", Suite, (@L "elif" NamedExpressionTest ":" Suite @R)+, "else", ":", Suite => ActionFn(958);
         assert!(__symbols.len() >= 8);
-        let __sym7 = __pop_Variant67(__symbols);
+        let __sym7 = __pop_Variant71(__symbols);
         let __sym6 = __pop_Variant0(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant38(__symbols);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant52(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
@@ -18887,7 +18900,7 @@ mod __parse__Top {
     {
         // IfStatement = "if", NamedExpressionTest, ":", Suite => ActionFn(959);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant52(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
@@ -18907,7 +18920,7 @@ mod __parse__Top {
         // IfStatement = "if", NamedExpressionTest, ":", Suite, (@L "elif" NamedExpressionTest ":" Suite @R)+ => ActionFn(960);
         assert!(__symbols.len() >= 5);
         let __sym4 = __pop_Variant38(__symbols);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant52(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
@@ -19467,7 +19480,7 @@ mod __parse__Top {
     {
         // KwargParameter<TypedParameter> = "**", TypedParameter => ActionFn(753);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -19499,7 +19512,7 @@ mod __parse__Top {
     {
         // KwargParameter<UntypedParameter> = "**", UntypedParameter => ActionFn(813);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -19573,7 +19586,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action1082::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (2, 172)
     }
     pub(crate) fn __reduce433<
@@ -19591,7 +19604,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action1083::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (3, 172)
     }
     pub(crate) fn __reduce434<
@@ -19606,7 +19619,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action1084::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (1, 172)
     }
     pub(crate) fn __reduce435<
@@ -19623,7 +19636,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action1085::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (2, 172)
     }
     pub(crate) fn __reduce436<
@@ -19634,7 +19647,7 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // ListLiteralValues? = ListLiteralValues => ActionFn(216);
-        let __sym0 = __pop_Variant71(__symbols);
+        let __sym0 = __pop_Variant70(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action216::<>(__sym0);
@@ -19663,11 +19676,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // MoreSmallStatementsOrDoBlock = DoBlock => ActionFn(12);
-        let __sym0 = __pop_Variant67(__symbols);
+        let __sym0 = __pop_Variant52(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action12::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant81(__nt), __end));
         (1, 174)
     }
     pub(crate) fn __reduce439<
@@ -19684,7 +19697,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action906::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant81(__nt), __end));
         (2, 174)
     }
     pub(crate) fn __reduce440<
@@ -19702,7 +19715,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action907::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant81(__nt), __end));
         (3, 174)
     }
     pub(crate) fn __reduce441<
@@ -19717,7 +19730,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action908::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant81(__nt), __end));
         (1, 174)
     }
     pub(crate) fn __reduce442<
@@ -19734,7 +19747,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action909::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant81(__nt), __end));
         (2, 174)
     }
     pub(crate) fn __reduce443<
@@ -19956,7 +19969,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action497::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (1, 180)
     }
     pub(crate) fn __reduce457<
@@ -19973,7 +19986,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action498::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (2, 180)
     }
     pub(crate) fn __reduce458<
@@ -19988,7 +20001,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action501::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant81(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant82(__nt), __end));
         (1, 181)
     }
     pub(crate) fn __reduce459<
@@ -20005,7 +20018,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action502::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant81(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant82(__nt), __end));
         (2, 181)
     }
     pub(crate) fn __reduce460<
@@ -20154,11 +20167,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // OneOrMore<ParameterDef<TypedParameter>> = ParameterDef<TypedParameter> => ActionFn(735);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action735::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant82(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant83(__nt), __end));
         (1, 184)
     }
     pub(crate) fn __reduce469<
@@ -20171,11 +20184,11 @@ mod __parse__Top {
         // OneOrMore<ParameterDef<TypedParameter>> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+ => ActionFn(736);
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant19(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action736::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant82(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant83(__nt), __end));
         (2, 184)
     }
     pub(crate) fn __reduce470<
@@ -20186,11 +20199,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // OneOrMore<ParameterDef<UntypedParameter>> = ParameterDef<UntypedParameter> => ActionFn(745);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action745::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant82(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant83(__nt), __end));
         (1, 185)
     }
     pub(crate) fn __reduce471<
@@ -20203,11 +20216,11 @@ mod __parse__Top {
         // OneOrMore<ParameterDef<UntypedParameter>> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+ => ActionFn(746);
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant19(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action746::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant82(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant83(__nt), __end));
         (2, 185)
     }
     pub(crate) fn __reduce472<
@@ -20222,7 +20235,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action884::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (1, 186)
     }
     pub(crate) fn __reduce473<
@@ -20239,7 +20252,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action885::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (2, 186)
     }
     pub(crate) fn __reduce474<
@@ -20254,7 +20267,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action888::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (1, 187)
     }
     pub(crate) fn __reduce475<
@@ -20271,7 +20284,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action889::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (2, 187)
     }
     pub(crate) fn __reduce476<
@@ -20282,11 +20295,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // OneOrMore<WithItem> = WithItem => ActionFn(892);
-        let __sym0 = __pop_Variant95(__symbols);
+        let __sym0 = __pop_Variant96(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action892::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant83(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant84(__nt), __end));
         (1, 188)
     }
     pub(crate) fn __reduce477<
@@ -20299,11 +20312,11 @@ mod __parse__Top {
         // OneOrMore<WithItem> = WithItem, ("," WithItem)+ => ActionFn(893);
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant24(__symbols);
-        let __sym0 = __pop_Variant95(__symbols);
+        let __sym0 = __pop_Variant96(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action893::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant83(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant84(__nt), __end));
         (2, 188)
     }
     pub(crate) fn __reduce478<
@@ -20346,11 +20359,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // ParameterDef<TypedParameter> = TypedParameter => ActionFn(427);
-        let __sym0 = __pop_Variant92(__symbols);
+        let __sym0 = __pop_Variant93(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action427::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant84(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
         (1, 190)
     }
     pub(crate) fn __reduce481<
@@ -20364,11 +20377,11 @@ mod __parse__Top {
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant52(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant92(__symbols);
+        let __sym0 = __pop_Variant93(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action428::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant84(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
         (3, 190)
     }
     pub(crate) fn __reduce482<
@@ -20379,11 +20392,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // ParameterDef<UntypedParameter> = UntypedParameter => ActionFn(417);
-        let __sym0 = __pop_Variant92(__symbols);
+        let __sym0 = __pop_Variant93(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action417::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant84(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
         (1, 191)
     }
     pub(crate) fn __reduce483<
@@ -20397,11 +20410,11 @@ mod __parse__Top {
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant52(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant92(__symbols);
+        let __sym0 = __pop_Variant93(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action418::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant84(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
         (3, 191)
     }
     pub(crate) fn __reduce484<
@@ -20412,11 +20425,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // ParameterDefs<TypedParameter> = ParameterDef<TypedParameter> => ActionFn(1062);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action1062::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (1, 192)
     }
     pub(crate) fn __reduce485<
@@ -20429,11 +20442,11 @@ mod __parse__Top {
         // ParameterDefs<TypedParameter> = ParameterDef<TypedParameter>, ("," ParameterDef<TypedParameter>)+ => ActionFn(1063);
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant19(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action1063::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (2, 192)
     }
     pub(crate) fn __reduce486<
@@ -20447,11 +20460,11 @@ mod __parse__Top {
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action1064::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (3, 192)
     }
     pub(crate) fn __reduce487<
@@ -20466,11 +20479,11 @@ mod __parse__Top {
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant19(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action1065::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (4, 192)
     }
     pub(crate) fn __reduce488<
@@ -20485,11 +20498,11 @@ mod __parse__Top {
         let __sym3 = __pop_Variant19(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action1066::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (4, 192)
     }
     pub(crate) fn __reduce489<
@@ -20505,11 +20518,11 @@ mod __parse__Top {
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant19(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym4.2.clone();
         let __nt = super::__action1067::<>(__sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (5, 192)
     }
     pub(crate) fn __reduce490<
@@ -20520,11 +20533,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // ParameterDefs<UntypedParameter> = ParameterDef<UntypedParameter> => ActionFn(1068);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action1068::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (1, 193)
     }
     pub(crate) fn __reduce491<
@@ -20537,11 +20550,11 @@ mod __parse__Top {
         // ParameterDefs<UntypedParameter> = ParameterDef<UntypedParameter>, ("," ParameterDef<UntypedParameter>)+ => ActionFn(1069);
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant19(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action1069::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (2, 193)
     }
     pub(crate) fn __reduce492<
@@ -20555,11 +20568,11 @@ mod __parse__Top {
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action1070::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (3, 193)
     }
     pub(crate) fn __reduce493<
@@ -20574,11 +20587,11 @@ mod __parse__Top {
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant19(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action1071::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (4, 193)
     }
     pub(crate) fn __reduce494<
@@ -20593,11 +20606,11 @@ mod __parse__Top {
         let __sym3 = __pop_Variant19(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action1072::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (4, 193)
     }
     pub(crate) fn __reduce495<
@@ -20613,11 +20626,11 @@ mod __parse__Top {
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant19(__symbols);
-        let __sym0 = __pop_Variant84(__symbols);
+        let __sym0 = __pop_Variant85(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym4.2.clone();
         let __nt = super::__action1073::<>(__sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant85(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
         (5, 193)
     }
     pub(crate) fn __reduce616<
@@ -20632,7 +20645,7 @@ mod __parse__Top {
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant79(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym4.2.clone();
@@ -20672,7 +20685,7 @@ mod __parse__Top {
         let __sym4 = __pop_Variant79(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym5.2.clone();
@@ -20710,7 +20723,7 @@ mod __parse__Top {
         // ParameterList<TypedParameter> = "*", TypedParameter, "," => ActionFn(775);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
@@ -20746,7 +20759,7 @@ mod __parse__Top {
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
@@ -20783,7 +20796,7 @@ mod __parse__Top {
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant79(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
@@ -20821,7 +20834,7 @@ mod __parse__Top {
         let __sym4 = __pop_Variant79(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym4.2.clone();
@@ -20857,7 +20870,7 @@ mod __parse__Top {
     {
         // ParameterList<TypedParameter> = "*", TypedParameter => ActionFn(783);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -20890,7 +20903,7 @@ mod __parse__Top {
         // ParameterList<TypedParameter> = "*", TypedParameter, ("," ParameterDef<TypedParameter>)+ => ActionFn(785);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
@@ -20959,7 +20972,7 @@ mod __parse__Top {
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant79(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym4.2.clone();
@@ -20999,7 +21012,7 @@ mod __parse__Top {
         let __sym4 = __pop_Variant79(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym5.2.clone();
@@ -21037,7 +21050,7 @@ mod __parse__Top {
         // ParameterList<UntypedParameter> = "*", UntypedParameter, "," => ActionFn(835);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
@@ -21073,7 +21086,7 @@ mod __parse__Top {
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
@@ -21110,7 +21123,7 @@ mod __parse__Top {
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant79(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
@@ -21148,7 +21161,7 @@ mod __parse__Top {
         let __sym4 = __pop_Variant79(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym4.2.clone();
@@ -21184,7 +21197,7 @@ mod __parse__Top {
     {
         // ParameterList<UntypedParameter> = "*", UntypedParameter => ActionFn(843);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -21217,7 +21230,7 @@ mod __parse__Top {
         // ParameterList<UntypedParameter> = "*", UntypedParameter, ("," ParameterDef<UntypedParameter>)+ => ActionFn(845);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
@@ -21314,12 +21327,12 @@ mod __parse__Top {
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant79(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action755::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (4, 197)
     }
     pub(crate) fn __reduce775<
@@ -21337,7 +21350,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action756::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (3, 197)
     }
     pub(crate) fn __reduce776<
@@ -21352,12 +21365,12 @@ mod __parse__Top {
         let __sym4 = __pop_Variant79(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym4.2.clone();
         let __nt = super::__action757::<>(__sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (5, 197)
     }
     pub(crate) fn __reduce777<
@@ -21376,7 +21389,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action758::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (4, 197)
     }
     pub(crate) fn __reduce778<
@@ -21388,12 +21401,12 @@ mod __parse__Top {
     {
         // ParameterListStarArgs<TypedParameter> = "*", TypedParameter => ActionFn(759);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action759::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (2, 197)
     }
     pub(crate) fn __reduce779<
@@ -21408,7 +21421,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action760::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (1, 197)
     }
     pub(crate) fn __reduce780<
@@ -21421,12 +21434,12 @@ mod __parse__Top {
         // ParameterListStarArgs<TypedParameter> = "*", TypedParameter, ("," ParameterDef<TypedParameter>)+ => ActionFn(761);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action761::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (3, 197)
     }
     pub(crate) fn __reduce781<
@@ -21443,7 +21456,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action762::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (2, 197)
     }
     pub(crate) fn __reduce782<
@@ -21457,12 +21470,12 @@ mod __parse__Top {
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant79(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action815::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (4, 198)
     }
     pub(crate) fn __reduce783<
@@ -21480,7 +21493,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action816::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (3, 198)
     }
     pub(crate) fn __reduce784<
@@ -21495,12 +21508,12 @@ mod __parse__Top {
         let __sym4 = __pop_Variant79(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym4.2.clone();
         let __nt = super::__action817::<>(__sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (5, 198)
     }
     pub(crate) fn __reduce785<
@@ -21519,7 +21532,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action818::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (4, 198)
     }
     pub(crate) fn __reduce786<
@@ -21531,12 +21544,12 @@ mod __parse__Top {
     {
         // ParameterListStarArgs<UntypedParameter> = "*", UntypedParameter => ActionFn(819);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action819::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (2, 198)
     }
     pub(crate) fn __reduce787<
@@ -21551,7 +21564,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action820::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (1, 198)
     }
     pub(crate) fn __reduce788<
@@ -21564,12 +21577,12 @@ mod __parse__Top {
         // ParameterListStarArgs<UntypedParameter> = "*", UntypedParameter, ("," ParameterDef<UntypedParameter>)+ => ActionFn(821);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant19(__symbols);
-        let __sym1 = __pop_Variant92(__symbols);
+        let __sym1 = __pop_Variant93(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action821::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (3, 198)
     }
     pub(crate) fn __reduce789<
@@ -21586,7 +21599,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action822::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant86(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
         (2, 198)
     }
     pub(crate) fn __reduce790<
@@ -21683,7 +21696,7 @@ mod __parse__Top {
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
         let __nt = super::__action1024::<>(&__start, &__end);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
         (0, 202)
     }
     pub(crate) fn __reduce796<
@@ -21698,7 +21711,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action1025::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
         (1, 202)
     }
     pub(crate) fn __reduce797<
@@ -21766,7 +21779,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action1086::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (2, 204)
     }
     pub(crate) fn __reduce801<
@@ -21784,7 +21797,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action1087::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (3, 204)
     }
     pub(crate) fn __reduce802<
@@ -21799,7 +21812,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action1088::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (1, 204)
     }
     pub(crate) fn __reduce803<
@@ -21816,7 +21829,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action1089::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant70(__nt), __end));
         (2, 204)
     }
     pub(crate) fn __reduce804<
@@ -21891,12 +21904,12 @@ mod __parse__Top {
     {
         // SimpleStatement = SmallStatement, MoreSmallStatementsOrDoBlock => ActionFn(11);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant67(__symbols);
+        let __sym1 = __pop_Variant81(__symbols);
         let __sym0 = __pop_Variant54(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action11::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
         (2, 207)
     }
     pub(crate) fn __reduce809<
@@ -21916,7 +21929,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym4.2.clone();
         let __nt = super::__action998::<>(__sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant88(__nt), __end));
         (5, 208)
     }
     pub(crate) fn __reduce810<
@@ -21937,7 +21950,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym5.2.clone();
         let __nt = super::__action999::<>(__sym0, __sym1, __sym2, __sym3, __sym4, __sym5);
-        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant88(__nt), __end));
         (6, 208)
     }
     pub(crate) fn __reduce811<
@@ -21956,7 +21969,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action1000::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant88(__nt), __end));
         (4, 208)
     }
     pub(crate) fn __reduce812<
@@ -21976,7 +21989,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym4.2.clone();
         let __nt = super::__action1001::<>(__sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant87(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant88(__nt), __end));
         (5, 208)
     }
     pub(crate) fn __reduce813<
@@ -21987,11 +22000,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // SingleForComprehension+ = SingleForComprehension => ActionFn(205);
-        let __sym0 = __pop_Variant87(__symbols);
+        let __sym0 = __pop_Variant88(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action205::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant88(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant89(__nt), __end));
         (1, 209)
     }
     pub(crate) fn __reduce814<
@@ -22003,12 +22016,12 @@ mod __parse__Top {
     {
         // SingleForComprehension+ = SingleForComprehension+, SingleForComprehension => ActionFn(206);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant87(__symbols);
-        let __sym0 = __pop_Variant88(__symbols);
+        let __sym1 = __pop_Variant88(__symbols);
+        let __sym0 = __pop_Variant89(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action206::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant88(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant89(__nt), __end));
         (2, 209)
     }
     pub(crate) fn __reduce815<
@@ -22025,7 +22038,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action1342::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant89(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant90(__nt), __end));
         (2, 210)
     }
     pub(crate) fn __reduce816<
@@ -22040,7 +22053,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action1343::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant89(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant90(__nt), __end));
         (1, 210)
     }
     pub(crate) fn __reduce817<
@@ -22051,11 +22064,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // SliceOp? = SliceOp => ActionFn(221);
-        let __sym0 = __pop_Variant89(__symbols);
+        let __sym0 = __pop_Variant90(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action221::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant90(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant91(__nt), __end));
         (1, 211)
     }
     pub(crate) fn __reduce818<
@@ -22069,7 +22082,7 @@ mod __parse__Top {
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
         let __nt = super::__action222::<>(&__start, &__end);
-        __symbols.push((__start, __Symbol::Variant90(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant91(__nt), __end));
         (0, 211)
     }
     pub(crate) fn __reduce819<
@@ -22217,11 +22230,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // Statement = SimpleStatement => ActionFn(9);
-        let __sym0 = __pop_Variant67(__symbols);
+        let __sym0 = __pop_Variant71(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action9::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
         (1, 214)
     }
     pub(crate) fn __reduce829<
@@ -22236,7 +22249,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action10::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
         (1, 214)
     }
     pub(crate) fn __reduce830<
@@ -22247,7 +22260,7 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // Statement+ = Statement => ActionFn(327);
-        let __sym0 = __pop_Variant67(__symbols);
+        let __sym0 = __pop_Variant71(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action327::<>(__sym0);
@@ -22263,7 +22276,7 @@ mod __parse__Top {
     {
         // Statement+ = Statement+, Statement => ActionFn(328);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant67(__symbols);
+        let __sym1 = __pop_Variant71(__symbols);
         let __sym0 = __pop_Variant72(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -22295,7 +22308,7 @@ mod __parse__Top {
     {
         // Subscript = Test, ":", Test, SliceOp => ActionFn(1344);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant89(__symbols);
+        let __sym3 = __pop_Variant90(__symbols);
         let __sym2 = __pop_Variant52(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant52(__symbols);
@@ -22314,7 +22327,7 @@ mod __parse__Top {
     {
         // Subscript = Test, ":", SliceOp => ActionFn(1345);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant89(__symbols);
+        let __sym2 = __pop_Variant90(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant52(__symbols);
         let __start = __sym0.0.clone();
@@ -22332,7 +22345,7 @@ mod __parse__Top {
     {
         // Subscript = ":", Test, SliceOp => ActionFn(1346);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant89(__symbols);
+        let __sym2 = __pop_Variant90(__symbols);
         let __sym1 = __pop_Variant52(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -22350,7 +22363,7 @@ mod __parse__Top {
     {
         // Subscript = ":", SliceOp => ActionFn(1347);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant89(__symbols);
+        let __sym1 = __pop_Variant90(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
@@ -22500,11 +22513,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // Suite = SimpleStatement => ActionFn(7);
-        let __sym0 = __pop_Variant67(__symbols);
+        let __sym0 = __pop_Variant71(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action7::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
         (1, 218)
     }
     pub(crate) fn __reduce846<
@@ -22523,7 +22536,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
         let __nt = super::__action8::<>(__sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant67(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
         (4, 218)
     }
     pub(crate) fn __reduce847<
@@ -22840,12 +22853,12 @@ mod __parse__Top {
     {
         // Top = StartModule, Program => ActionFn(1);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant67(__symbols);
+        let __sym1 = __pop_Variant71(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action1::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant91(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant92(__nt), __end));
         (2, 230)
     }
     pub(crate) fn __reduce868<
@@ -22857,12 +22870,12 @@ mod __parse__Top {
     {
         // Top = StartInteractive, Program => ActionFn(2);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant67(__symbols);
+        let __sym1 = __pop_Variant71(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action2::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant91(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant92(__nt), __end));
         (2, 230)
     }
     pub(crate) fn __reduce869<
@@ -22879,7 +22892,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action1359::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant91(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant92(__nt), __end));
         (2, 230)
     }
     pub(crate) fn __reduce870<
@@ -22897,7 +22910,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action1360::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant91(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant92(__nt), __end));
         (3, 230)
     }
     pub(crate) fn __reduce871<
@@ -22909,14 +22922,14 @@ mod __parse__Top {
     {
         // TryStatement = "try", ":", Suite, ExceptClause+, "else", ":", Suite, "finally", ":", Suite => ActionFn(937);
         assert!(__symbols.len() >= 10);
-        let __sym9 = __pop_Variant67(__symbols);
+        let __sym9 = __pop_Variant71(__symbols);
         let __sym8 = __pop_Variant0(__symbols);
         let __sym7 = __pop_Variant0(__symbols);
-        let __sym6 = __pop_Variant67(__symbols);
+        let __sym6 = __pop_Variant71(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant70(__symbols);
-        let __sym2 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant69(__symbols);
+        let __sym2 = __pop_Variant71(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -22934,11 +22947,11 @@ mod __parse__Top {
     {
         // TryStatement = "try", ":", Suite, ExceptClause+, "else", ":", Suite => ActionFn(938);
         assert!(__symbols.len() >= 7);
-        let __sym6 = __pop_Variant67(__symbols);
+        let __sym6 = __pop_Variant71(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant70(__symbols);
-        let __sym2 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant69(__symbols);
+        let __sym2 = __pop_Variant71(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -22956,11 +22969,11 @@ mod __parse__Top {
     {
         // TryStatement = "try", ":", Suite, ExceptClause+, "finally", ":", Suite => ActionFn(939);
         assert!(__symbols.len() >= 7);
-        let __sym6 = __pop_Variant67(__symbols);
+        let __sym6 = __pop_Variant71(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant70(__symbols);
-        let __sym2 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant69(__symbols);
+        let __sym2 = __pop_Variant71(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -22978,8 +22991,8 @@ mod __parse__Top {
     {
         // TryStatement = "try", ":", Suite, ExceptClause+ => ActionFn(940);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant70(__symbols);
-        let __sym2 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant69(__symbols);
+        let __sym2 = __pop_Variant71(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -22997,10 +23010,10 @@ mod __parse__Top {
     {
         // TryStatement = "try", ":", Suite, "finally", ":", Suite => ActionFn(936);
         assert!(__symbols.len() >= 6);
-        let __sym5 = __pop_Variant67(__symbols);
+        let __sym5 = __pop_Variant71(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant67(__symbols);
+        let __sym2 = __pop_Variant71(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -23024,7 +23037,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action902::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant92(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant93(__nt), __end));
         (3, 232)
     }
     pub(crate) fn __reduce877<
@@ -23039,7 +23052,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action903::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant92(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant93(__nt), __end));
         (1, 232)
     }
     pub(crate) fn __reduce878<
@@ -23050,11 +23063,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // TypedParameter? = TypedParameter => ActionFn(429);
-        let __sym0 = __pop_Variant92(__symbols);
+        let __sym0 = __pop_Variant93(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action429::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant93(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant94(__nt), __end));
         (1, 233)
     }
     pub(crate) fn __reduce879<
@@ -23068,7 +23081,7 @@ mod __parse__Top {
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
         let __nt = super::__action430::<>(&__start, &__end);
-        __symbols.push((__start, __Symbol::Variant93(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant94(__nt), __end));
         (0, 233)
     }
     pub(crate) fn __reduce880<
@@ -23083,7 +23096,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action138::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant94(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant95(__nt), __end));
         (1, 234)
     }
     pub(crate) fn __reduce881<
@@ -23098,7 +23111,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action139::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant94(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant95(__nt), __end));
         (1, 234)
     }
     pub(crate) fn __reduce882<
@@ -23113,7 +23126,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action140::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant94(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant95(__nt), __end));
         (1, 234)
     }
     pub(crate) fn __reduce883<
@@ -23128,7 +23141,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action692::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant92(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant93(__nt), __end));
         (1, 235)
     }
     pub(crate) fn __reduce884<
@@ -23139,11 +23152,11 @@ mod __parse__Top {
     ) -> (usize, usize)
     {
         // UntypedParameter? = UntypedParameter => ActionFn(419);
-        let __sym0 = __pop_Variant92(__symbols);
+        let __sym0 = __pop_Variant93(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action419::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant93(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant94(__nt), __end));
         (1, 236)
     }
     pub(crate) fn __reduce885<
@@ -23157,7 +23170,7 @@ mod __parse__Top {
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
         let __nt = super::__action420::<>(&__start, &__end);
-        __symbols.push((__start, __Symbol::Variant93(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant94(__nt), __end));
         (0, 236)
     }
     pub(crate) fn __reduce886<
@@ -23169,10 +23182,10 @@ mod __parse__Top {
     {
         // WhileStatement = "while", NamedExpressionTest, ":", Suite, "else", ":", Suite => ActionFn(930);
         assert!(__symbols.len() >= 7);
-        let __sym6 = __pop_Variant67(__symbols);
+        let __sym6 = __pop_Variant71(__symbols);
         let __sym5 = __pop_Variant0(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant52(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
@@ -23191,7 +23204,7 @@ mod __parse__Top {
     {
         // WhileStatement = "while", NamedExpressionTest, ":", Suite => ActionFn(931);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant52(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
@@ -23216,7 +23229,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action919::<>(__sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant95(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant96(__nt), __end));
         (3, 238)
     }
     pub(crate) fn __reduce889<
@@ -23231,7 +23244,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action920::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant95(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant96(__nt), __end));
         (1, 238)
     }
     pub(crate) fn __reduce890<
@@ -23243,9 +23256,9 @@ mod __parse__Top {
     {
         // WithStatement = "async", "with", WithItem, ":", Suite => ActionFn(1090);
         assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant67(__symbols);
+        let __sym4 = __pop_Variant71(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant95(__symbols);
+        let __sym2 = __pop_Variant96(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -23263,10 +23276,10 @@ mod __parse__Top {
     {
         // WithStatement = "async", "with", WithItem, ("," WithItem)+, ":", Suite => ActionFn(1091);
         assert!(__symbols.len() >= 6);
-        let __sym5 = __pop_Variant67(__symbols);
+        let __sym5 = __pop_Variant71(__symbols);
         let __sym4 = __pop_Variant0(__symbols);
         let __sym3 = __pop_Variant24(__symbols);
-        let __sym2 = __pop_Variant95(__symbols);
+        let __sym2 = __pop_Variant96(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
@@ -23284,9 +23297,9 @@ mod __parse__Top {
     {
         // WithStatement = "with", WithItem, ":", Suite => ActionFn(1092);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant67(__symbols);
+        let __sym3 = __pop_Variant71(__symbols);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant95(__symbols);
+        let __sym1 = __pop_Variant96(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym3.2.clone();
@@ -23303,10 +23316,10 @@ mod __parse__Top {
     {
         // WithStatement = "with", WithItem, ("," WithItem)+, ":", Suite => ActionFn(1093);
         assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant67(__symbols);
+        let __sym4 = __pop_Variant71(__symbols);
         let __sym3 = __pop_Variant0(__symbols);
         let __sym2 = __pop_Variant24(__symbols);
-        let __sym1 = __pop_Variant95(__symbols);
+        let __sym1 = __pop_Variant96(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym4.2.clone();
@@ -23409,7 +23422,7 @@ mod __parse__Top {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action198::<>(__sym0);
-        __symbols.push((__start, __Symbol::Variant96(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant97(__nt), __end));
         (1, 243)
     }
     pub(crate) fn __reduce901<
@@ -23422,11 +23435,11 @@ mod __parse__Top {
         // bytes+ = bytes+, bytes => ActionFn(199);
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant96(__symbols);
+        let __sym0 = __pop_Variant97(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action199::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant96(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant97(__nt), __end));
         (2, 243)
     }
 }
@@ -23532,22 +23545,29 @@ fn __action10<
 fn __action11<
 >(
     (_, s1, _): (ast::Location, ast::Stmt, ast::Location),
-    (_, s2, _): (ast::Location, ast::Suite, ast::Location),
+    (_, s2, _): (ast::Location, StatementsOrDoBlock, ast::Location),
 ) -> ast::Suite
 {
     {
-        let mut statements = vec![s1];
-        statements.extend(s2.into_iter());
-        statements
+        match s2 {
+            StatementsOrDoBlock::Statements(s2) => {
+                let mut statements = vec![s1];
+                statements.extend(s2.into_iter());
+                statements
+            },
+            StatementsOrDoBlock::DoBlock(d) => {
+                vec![s1]
+            }
+        }
     }
 }
 
 fn __action12<
 >(
-    (_, d, _): (ast::Location, ast::Suite, ast::Location),
-) -> ast::Suite
+    (_, d, _): (ast::Location, ast::Expr, ast::Location),
+) -> StatementsOrDoBlock
 {
-    d
+    StatementsOrDoBlock::DoBlock(d)
 }
 
 fn __action13<
@@ -23555,9 +23575,9 @@ fn __action13<
     (_, s2, _): (ast::Location, alloc::vec::Vec<(lexer::Tok, ast::Stmt)>, ast::Location),
     (_, _, _): (ast::Location, core::option::Option<lexer::Tok>, ast::Location),
     (_, _, _): (ast::Location, lexer::Tok, ast::Location),
-) -> ast::Suite
+) -> StatementsOrDoBlock
 {
-    s2.into_iter().map(|e| e.1).collect()
+    StatementsOrDoBlock::Statements(s2.into_iter().map(|e| e.1).collect())
 }
 
 fn __action14<
@@ -25369,10 +25389,30 @@ fn __action149<
     (_, _, _): (ast::Location, lexer::Tok, ast::Location),
     (_, body, _): (ast::Location, ast::Suite, ast::Location),
     (_, end_location, _): (ast::Location, ast::Location, ast::Location),
-) -> ast::Suite
+) -> ast::Expr
 {
     {
-        vec![]
+        let p = p.unwrap_or_else(|| {
+            ast::Arguments {
+                posonlyargs: vec![],
+                args: vec![],
+                vararg: None,
+                kwonlyargs: vec![],
+                kw_defaults: vec![],
+                kwarg: None,
+                defaults: vec![]
+            }
+        });
+
+        ast::Expr {
+            location,
+            end_location: Some(end_location),
+            custom: (),
+            node: ast::ExprKind::DoBlock {
+                args: Box::new(p),
+                body: body
+            }
+        }
     }
 }
 
@@ -29139,7 +29179,7 @@ fn __action479<
     __0: (ast::Location, alloc::vec::Vec<(lexer::Tok, ast::Stmt)>, ast::Location),
     __1: (ast::Location, lexer::Tok, ast::Location),
     __2: (ast::Location, lexer::Tok, ast::Location),
-) -> ast::Suite
+) -> StatementsOrDoBlock
 {
     let __start0 = __1.0.clone();
     let __end0 = __1.2.clone();
@@ -29158,7 +29198,7 @@ fn __action480<
 >(
     __0: (ast::Location, alloc::vec::Vec<(lexer::Tok, ast::Stmt)>, ast::Location),
     __1: (ast::Location, lexer::Tok, ast::Location),
-) -> ast::Suite
+) -> StatementsOrDoBlock
 {
     let __start0 = __0.2.clone();
     let __end0 = __1.0.clone();
@@ -30449,7 +30489,7 @@ fn __action535<
     __2: (ast::Location, core::option::Option<ast::Arguments>, ast::Location),
     __3: (ast::Location, lexer::Tok, ast::Location),
     __4: (ast::Location, ast::Suite, ast::Location),
-) -> ast::Suite
+) -> ast::Expr
 {
     let __start0 = __4.2.clone();
     let __end0 = __4.2.clone();
@@ -32742,7 +32782,7 @@ fn __action635<
     __1: (ast::Location, core::option::Option<ast::Arguments>, ast::Location),
     __2: (ast::Location, lexer::Tok, ast::Location),
     __3: (ast::Location, ast::Suite, ast::Location),
-) -> ast::Suite
+) -> ast::Expr
 {
     let __start0 = __0.0.clone();
     let __end0 = __0.0.clone();
@@ -38594,7 +38634,7 @@ fn __action906<
 >(
     __0: (ast::Location, lexer::Tok, ast::Location),
     __1: (ast::Location, lexer::Tok, ast::Location),
-) -> ast::Suite
+) -> StatementsOrDoBlock
 {
     let __start0 = __0.0.clone();
     let __end0 = __0.0.clone();
@@ -38615,7 +38655,7 @@ fn __action907<
     __0: (ast::Location, alloc::vec::Vec<(lexer::Tok, ast::Stmt)>, ast::Location),
     __1: (ast::Location, lexer::Tok, ast::Location),
     __2: (ast::Location, lexer::Tok, ast::Location),
-) -> ast::Suite
+) -> StatementsOrDoBlock
 {
     let __start0 = __0.0.clone();
     let __end0 = __0.2.clone();
@@ -38633,7 +38673,7 @@ fn __action907<
 fn __action908<
 >(
     __0: (ast::Location, lexer::Tok, ast::Location),
-) -> ast::Suite
+) -> StatementsOrDoBlock
 {
     let __start0 = __0.0.clone();
     let __end0 = __0.0.clone();
@@ -38652,7 +38692,7 @@ fn __action909<
 >(
     __0: (ast::Location, alloc::vec::Vec<(lexer::Tok, ast::Stmt)>, ast::Location),
     __1: (ast::Location, lexer::Tok, ast::Location),
-) -> ast::Suite
+) -> StatementsOrDoBlock
 {
     let __start0 = __0.0.clone();
     let __end0 = __0.2.clone();
@@ -49512,7 +49552,7 @@ fn __action1334<
     __1: (ast::Location, ast::Arguments, ast::Location),
     __2: (ast::Location, lexer::Tok, ast::Location),
     __3: (ast::Location, ast::Suite, ast::Location),
-) -> ast::Suite
+) -> ast::Expr
 {
     let __start0 = __1.0.clone();
     let __end0 = __1.2.clone();
@@ -49533,7 +49573,7 @@ fn __action1335<
     __0: (ast::Location, ast::DoMode, ast::Location),
     __1: (ast::Location, lexer::Tok, ast::Location),
     __2: (ast::Location, ast::Suite, ast::Location),
-) -> ast::Suite
+) -> ast::Expr
 {
     let __start0 = __0.2.clone();
     let __end0 = __1.0.clone();

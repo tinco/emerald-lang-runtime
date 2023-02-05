@@ -5,6 +5,7 @@
 
 use crate::{
     ast,
+    do_block::{StatementsOrDoBlock},
     error::{LexicalError, LexicalErrorType},
     function::{ArgumentList, parse_args, parse_params},
     lexer,
@@ -49,15 +50,22 @@ Statement: ast::Suite = {
 
 SimpleStatement: ast::Suite = {
     <s1:SmallStatement> <s2:MoreSmallStatementsOrDoBlock> => {
-        let mut statements = vec![s1];
-        statements.extend(s2.into_iter());
-        statements
+        match s2 {
+            StatementsOrDoBlock::Statements(s2) => {
+                let mut statements = vec![s1];
+                statements.extend(s2.into_iter());
+                statements
+            },
+            StatementsOrDoBlock::DoBlock(d) => {
+                vec![s1]
+            }
+        }
     }
 };
 
-MoreSmallStatementsOrDoBlock: ast::Suite = {
-    <d:DoBlock> => d,
-    <s2:(";" SmallStatement)*> ";"? "\n" => s2.into_iter().map(|e| e.1).collect(),
+MoreSmallStatementsOrDoBlock: StatementsOrDoBlock = {
+    <d:DoBlock> => StatementsOrDoBlock::DoBlock(d),
+    <s2:(";" SmallStatement)*> ";"? "\n" => StatementsOrDoBlock::Statements(s2.into_iter().map(|e| e.1).collect()),
 };
 
 SmallStatement: ast::Stmt = {
@@ -1000,29 +1008,31 @@ DoOp: ast::DoMode = {
     "do" => ast::DoMode::Sync
 }
 
-DoBlock: ast::Suite = {
-    // for some reason it's not accepting the doblock as the end of the statement, and it's expecting
-    // the statement to continue with some operator or expression combinator
+DoBlock: ast::Expr = {
     <location:@L> <d:DoOp> <p:ParameterList<UntypedParameter>?> ":" <body:Suite> <end_location:@R> => {
-        vec![]
+        let p = p.unwrap_or_else(|| {
+            ast::Arguments {
+                posonlyargs: vec![],
+                args: vec![],
+                vararg: None,
+                kwonlyargs: vec![],
+                kw_defaults: vec![],
+                kwarg: None,
+                defaults: vec![]
+            }
+        });
+
+        ast::Expr {
+            location,
+            end_location: Some(end_location),
+            custom: (),
+            node: ast::ExprKind::DoBlock {
+                args: Box::new(p),
+                body: body
+            }
+        }
     },
 }
-
-// DoBlock: ast::Suite = {
-//     <location:@L> <async:("async")?> "do" <p:DoParameters> <r:("->" Test)?> ":" <body:Suite> <end_location:@R> => {
-//         let params = Box::new(p);
-//         let returns = r.map(|x| Box::new(x.1));
-//         let type_comment = None;
-//         let name = "DoBlock";
-//         let decorator_list = vec![];
-//         let node = if is_async.is_some() {
-//             ast::StmtKind::AsyncFunctionDef { name, params, body, decorator_list, returns, type_comment }
-//         } else {
-//             ast::StmtKind::FunctionDef { name, params, body, decorator_list, returns, type_comment }
-//         };
-//         vec![ast::Stmt::new(location, end_location, node)]
-//     }
-// }
 
 SubscriptList: ast::Expr = {
     <location:@L> <s1:Subscript> <s2:("," Subscript)*> <trailing_comma:","?> <end_location:@R> => {
