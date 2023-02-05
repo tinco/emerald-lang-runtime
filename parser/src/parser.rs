@@ -169,8 +169,8 @@ mod tests {
     #[test]
     fn test_parse_class() {
         let source = "\
-class Foo(A, B):
- def __init__(self):
+class Foo extends A:
+ def initialize():
   pass
  def method_with_default(self, arg='default'):
   pass";

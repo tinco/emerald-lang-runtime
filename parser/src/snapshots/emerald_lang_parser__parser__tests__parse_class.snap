@@ -21,34 +21,17 @@ expression: "parse_program(source, \"<test>\").unwrap()"
                 Located {
                     location: Location {
                         row: 1,
-                        column: 10,
+                        column: 18,
                     },
                     end_location: Some(
                         Location {
                             row: 1,
-                            column: 11,
+                            column: 19,
                         },
                     ),
                     custom: (),
                     node: Name {
                         id: "A",
-                        ctx: Load,
-                    },
-                },
-                Located {
-                    location: Location {
-                        row: 1,
-                        column: 13,
-                    },
-                    end_location: Some(
-                        Location {
-                            row: 1,
-                            column: 14,
-                        },
-                    ),
-                    custom: (),
-                    node: Name {
-                        id: "B",
                         ctx: Load,
                     },
                 },
@@ -68,29 +51,10 @@ expression: "parse_program(source, \"<test>\").unwrap()"
                     ),
                     custom: (),
                     node: FunctionDef {
-                        name: "__init__",
+                        name: "initialize",
                         args: Arguments {
                             posonlyargs: [],
-                            args: [
-                                Located {
-                                    location: Location {
-                                        row: 2,
-                                        column: 14,
-                                    },
-                                    end_location: Some(
-                                        Location {
-                                            row: 2,
-                                            column: 18,
-                                        },
-                                    ),
-                                    custom: (),
-                                    node: ArgData {
-                                        arg: "self",
-                                        annotation: None,
-                                        type_comment: None,
-                                    },
-                                },
-                            ],
+                            args: [],
                             vararg: None,
                             kwonlyargs: [],
                             kw_defaults: [],

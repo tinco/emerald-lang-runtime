@@ -654,10 +654,24 @@ KwargParameter<ArgType>: Option<Box<ast::Arg>> = {
     }
 };
 
+ClassArgument: ast::Located<ast::ExprKind> = {
+    <location:@L> <name:Identifier> <end_location:@R> => {
+        ast::Located {
+            custom: (),
+            location,
+            end_location: Some(end_location),
+            node: ast::ExprKind::Name {
+                id: name,
+                ctx: ast::ExprContext::Load,
+            },
+        }
+    },
+};
+
 ClassDef: ast::Stmt = {
-    <decorator_list:Decorator*> <location:@L> "class" <name:Identifier> <a:("extends" Identifier)?> ":" <body:Suite> <end_location:@R> => {
+    <decorator_list:Decorator*> <location:@L> "class" <name:Identifier> <a:("extends" ClassArgument)?> ":" <body:Suite> <end_location:@R> => {
         let (bases, keywords) = match a {
-            Some((_, arg)) => (vec![], vec![]),
+            Some((_, base)) => (vec![base], vec![]),
             None => (vec![], vec![]),
         };
         ast::Stmt {
