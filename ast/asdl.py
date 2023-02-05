@@ -27,7 +27,7 @@ __all__ = [
     'Field', 'Sum', 'Product', 'VisitorBase', 'Check', 'check']
 
 # The following classes define nodes into which the ASDL description is parsed.
-# Note: this is a "meta-AST". ASDL files (such as Python.asdl) describe the AST
+# Note: this is a "meta-AST". ASDL files (such as Emerald.asdl) describe the AST
 # structure used by a programming language. But ASDL files themselves need to be
 # parsed. This module parses ASDL files and uses a simple AST to represent them.
 # See the EBNF at the top of the file to understand the logical connection
