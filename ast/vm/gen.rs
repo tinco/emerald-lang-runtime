@@ -367,6 +367,16 @@ impl NodeLambda {
         class.set_attr(identifier!(ctx, _attributes), ctx.new_list(vec![ctx.new_str(ascii!("lineno")).into(),ctx.new_str(ascii!("col_offset")).into(),ctx.new_str(ascii!("end_lineno")).into(),ctx.new_str(ascii!("end_col_offset")).into()]).into());
     }
 }
+#[pyclass(module = "_ast", name = "DoBlock", base = "NodeKindExpr")]
+struct NodeDoBlock;
+#[pyclass(flags(HAS_DICT, BASETYPE))]
+impl NodeDoBlock {
+    #[extend_class]
+    fn extend_class_with_fields(ctx: &Context, class: &'static Py<PyType>) {
+        class.set_attr(identifier!(ctx, _fields), ctx.new_tuple(vec![ctx.new_str(ascii!("args")).into(),ctx.new_str(ascii!("body")).into()]).into());
+        class.set_attr(identifier!(ctx, _attributes), ctx.new_list(vec![ctx.new_str(ascii!("lineno")).into(),ctx.new_str(ascii!("col_offset")).into(),ctx.new_str(ascii!("end_lineno")).into(),ctx.new_str(ascii!("end_col_offset")).into()]).into());
+    }
+}
 #[pyclass(module = "_ast", name = "IfExp", base = "NodeKindExpr")]
 struct NodeIfExp;
 #[pyclass(flags(HAS_DICT, BASETYPE))]
@@ -1600,6 +1610,13 @@ impl Node for ast::ExprKind {
                 _dict.set_item("body", body.ast_to_object(_vm), _vm).unwrap();
                 _node.into()
             }
+            ast::ExprKind::DoBlock { args,body } => {
+                let _node = AstNode.into_ref_with_type(_vm, NodeDoBlock::static_type().to_owned()).unwrap();
+                let _dict = _node.as_object().dict().unwrap();
+                _dict.set_item("args", args.ast_to_object(_vm), _vm).unwrap();
+                _dict.set_item("body", body.ast_to_object(_vm), _vm).unwrap();
+                _node.into()
+            }
             ast::ExprKind::IfExp { test,body,orelse } => {
                 let _node = AstNode.into_ref_with_type(_vm, NodeIfExp::static_type().to_owned()).unwrap();
                 let _dict = _node.as_object().dict().unwrap();
@@ -1790,6 +1807,12 @@ impl Node for ast::ExprKind {
         } else
         if _cls.is(NodeLambda::static_type()) {
             ast::ExprKind::Lambda {
+                args: Node::ast_from_object(_vm, get_node_field(_vm, &_object, "args", "expr")?)?,
+                body: Node::ast_from_object(_vm, get_node_field(_vm, &_object, "body", "expr")?)?,
+            }
+        } else
+        if _cls.is(NodeDoBlock::static_type()) {
+            ast::ExprKind::DoBlock {
                 args: Node::ast_from_object(_vm, get_node_field(_vm, &_object, "args", "expr")?)?,
                 body: Node::ast_from_object(_vm, get_node_field(_vm, &_object, "body", "expr")?)?,
             }
@@ -2657,6 +2680,7 @@ pub fn extend_module_nodes(vm: &VirtualMachine, module: &PyObject) {
         "BinOp" => NodeBinOp::make_class(&vm.ctx),
         "UnaryOp" => NodeUnaryOp::make_class(&vm.ctx),
         "Lambda" => NodeLambda::make_class(&vm.ctx),
+        "DoBlock" => NodeDoBlock::make_class(&vm.ctx),
         "IfExp" => NodeIfExp::make_class(&vm.ctx),
         "Dict" => NodeDict::make_class(&vm.ctx),
         "Set" => NodeSet::make_class(&vm.ctx),

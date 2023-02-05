@@ -186,6 +186,10 @@ pub enum ExprKind<U = ()> {
         args: Box<Arguments<U>>,
         body: Box<Expr<U>>,
     },
+    DoBlock {
+        args: Box<Arguments<U>>,
+        body: Vec<Stmt<U>>,
+    },
     IfExp {
         test: Box<Expr<U>>,
         body: Box<Expr<U>>,
@@ -758,6 +762,12 @@ pub mod fold {
             }
             ExprKind::Lambda { args,body } => {
                 Ok(ExprKind::Lambda {
+                    args: Foldable::fold(args, folder)?,
+                    body: Foldable::fold(body, folder)?,
+                })
+            }
+            ExprKind::DoBlock { args,body } => {
+                Ok(ExprKind::DoBlock {
                     args: Foldable::fold(args, folder)?,
                     body: Foldable::fold(body, folder)?,
                 })

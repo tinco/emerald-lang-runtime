@@ -53,6 +53,7 @@ impl<U> ExprKind<U> {
             ExprKind::FormattedValue { .. } => "f-string expression",
             ExprKind::Name { .. } => "name",
             ExprKind::Lambda { .. } => "lambda",
+            ExprKind::DoBlock { .. } => "do block",
             ExprKind::IfExp { .. } => "conditional expression",
             ExprKind::NamedExpr { .. } => "named expression",
         }
