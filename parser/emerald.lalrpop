@@ -57,7 +57,16 @@ SimpleStatement: ast::Suite = {
                 statements
             },
             StatementsOrDoBlock::DoBlock(d) => {
-                vec![s1]
+                let mut statement = s1;
+
+                if let ast::StmtKind::Expr { value } = &mut statement.node {
+                    if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
+                        args.push(d);
+                    } else {
+                        
+                    }
+                }
+                vec![statement]
             }
         }
     }

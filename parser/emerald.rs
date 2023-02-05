@@ -1,5 +1,5 @@
 // auto-generated: "lalrpop 0.19.8"
-// sha3: 8cf81fa179ebbbe06d32f09decf68543e1588b1e9b1e0cd117b7e773fa466b5a
+// sha3: 3ac52b0c26a9afe62830fd57d9dae60afda5b525ce37a5f30d4303bf0d84ab29
 use crate::{
     ast,
     do_block::{StatementsOrDoBlock},
@@ -23556,7 +23556,14 @@ fn __action11<
                 statements
             },
             StatementsOrDoBlock::DoBlock(d) => {
-                vec![s1]
+                let mut statement = s1;
+                
+                if let ast::StmtKind::Expr { value } = &mut statement.node {
+                    if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
+                        args.push(d);
+                    }
+                }
+                vec![statement]
             }
         }
     }
