@@ -49,12 +49,12 @@ Statement: ast::Suite = {
 };
 
 SimpleStatement: ast::Suite = {
-    <s1:SmallStatement> <s2:MoreSmallStatementsOrDoBlock> => {
+    <s1:SmallStatement> <s2:MoreSmallStatementsOrDoBlock> =>? {
         match s2 {
             StatementsOrDoBlock::Statements(s2) => {
                 let mut statements = vec![s1];
                 statements.extend(s2.into_iter());
-                statements
+                return Ok(statements);
             },
             StatementsOrDoBlock::DoBlock(d) => {
                 let mut statement = s1;
@@ -62,11 +62,13 @@ SimpleStatement: ast::Suite = {
                 if let ast::StmtKind::Expr { value } = &mut statement.node {
                     if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
                         args.push(d);
-                    } else {
-                        
+                        return Ok(vec![statement]).into();
                     }
                 }
-                vec![statement]
+                Err(LexicalError{
+                    error : LexicalErrorType::OtherError("last expression prior to do block must be a function call".to_string()),
+                    location: d.location,
+                }.into())
             }
         }
     }

@@ -1,5 +1,5 @@
 // auto-generated: "lalrpop 0.19.8"
-// sha3: 3ac52b0c26a9afe62830fd57d9dae60afda5b525ce37a5f30d4303bf0d84ab29
+// sha3: beeed147a70a8f2bbadbf91eebf4073110669caf77fb7d6fa2c2a4ed9de19a72
 use crate::{
     ast,
     do_block::{StatementsOrDoBlock},
@@ -11148,7 +11148,18 @@ mod __parse__Top {
                 __reduce807(__lookahead_start, __symbols, core::marker::PhantomData::<()>)
             }
             808 => {
-                __reduce808(__lookahead_start, __symbols, core::marker::PhantomData::<()>)
+                // SimpleStatement = SmallStatement, MoreSmallStatementsOrDoBlock => ActionFn(11);
+                assert!(__symbols.len() >= 2);
+                let __sym1 = __pop_Variant81(__symbols);
+                let __sym0 = __pop_Variant54(__symbols);
+                let __start = __sym0.0.clone();
+                let __end = __sym1.2.clone();
+                let __nt = match super::__action11::<>(__sym0, __sym1) {
+                    Ok(v) => v,
+                    Err(e) => return Some(Err(e)),
+                };
+                __symbols.push((__start, __Symbol::Variant71(__nt), __end));
+                (2, 207)
             }
             809 => {
                 __reduce809(__lookahead_start, __symbols, core::marker::PhantomData::<()>)
@@ -21895,23 +21906,6 @@ mod __parse__Top {
         __symbols.push((__start, __Symbol::Variant51(__nt), __end));
         (1, 206)
     }
-    pub(crate) fn __reduce808<
-    >(
-        __lookahead_start: Option<&ast::Location>,
-        __symbols: &mut alloc::vec::Vec<(ast::Location,__Symbol<>,ast::Location)>,
-        _: core::marker::PhantomData<()>,
-    ) -> (usize, usize)
-    {
-        // SimpleStatement = SmallStatement, MoreSmallStatementsOrDoBlock => ActionFn(11);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant81(__symbols);
-        let __sym0 = __pop_Variant54(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym1.2.clone();
-        let __nt = super::__action11::<>(__sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant71(__nt), __end));
-        (2, 207)
-    }
     pub(crate) fn __reduce809<
     >(
         __lookahead_start: Option<&ast::Location>,
@@ -23546,24 +23540,28 @@ fn __action11<
 >(
     (_, s1, _): (ast::Location, ast::Stmt, ast::Location),
     (_, s2, _): (ast::Location, StatementsOrDoBlock, ast::Location),
-) -> ast::Suite
+) -> Result<ast::Suite,__lalrpop_util::ParseError<ast::Location,lexer::Tok,LexicalError>>
 {
     {
         match s2 {
             StatementsOrDoBlock::Statements(s2) => {
                 let mut statements = vec![s1];
                 statements.extend(s2.into_iter());
-                statements
+                return Ok(statements);
             },
             StatementsOrDoBlock::DoBlock(d) => {
                 let mut statement = s1;
-                
+
                 if let ast::StmtKind::Expr { value } = &mut statement.node {
                     if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
                         args.push(d);
+                        return Ok(vec![statement]).into();
                     }
                 }
-                vec![statement]
+                Err(LexicalError{
+                    error : LexicalErrorType::OtherError("last expression prior to do block must be a function call".to_string()),
+                    location: d.location,
+                }.into())
             }
         }
     }
