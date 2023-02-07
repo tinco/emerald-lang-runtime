@@ -1,5 +1,5 @@
 // auto-generated: "lalrpop 0.19.8"
-// sha3: beeed147a70a8f2bbadbf91eebf4073110669caf77fb7d6fa2c2a4ed9de19a72
+// sha3: c49aeda7966802b63bcfb6e9b20cbb9624123186482146624ac3d1b3b51c23f3
 use crate::{
     ast,
     do_block::{StatementsOrDoBlock},
@@ -23552,10 +23552,34 @@ fn __action11<
             StatementsOrDoBlock::DoBlock(d) => {
                 let mut statement = s1;
 
-                if let ast::StmtKind::Expr { value } = &mut statement.node {
-                    if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
-                        args.push(d);
-                        return Ok(vec![statement]).into();
+                match &mut statement.node {
+                    ast::StmtKind::Expr { value } => {
+                        if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
+                            args.push(d);
+                            return Ok(vec![statement]).into();
+                        } else {
+                            return Err(LexicalError{
+                                error : LexicalErrorType::OtherError(format!("last expression is not a call {value:?}").to_string()),
+                                location: d.location,
+                            }.into());
+                        }
+                    },
+                    ast::StmtKind::Assign { targets, value, type_comment } => {
+                        if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
+                            args.push(d);
+                            return Ok(vec![statement]).into();
+                        } else {
+                            return Err(LexicalError{
+                                error : LexicalErrorType::OtherError(format!("last expression is not a call {value:?}").to_string()),
+                                location: d.location,
+                            }.into());
+                        }
+                    },
+                    _ => {
+                        return Err(LexicalError{
+                            error : LexicalErrorType::OtherError(format!("last non-expression is {statement:?}").to_string()),
+                            location: d.location,
+                        }.into());
                     }
                 }
                 Err(LexicalError{

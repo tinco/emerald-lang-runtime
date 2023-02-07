@@ -59,10 +59,34 @@ SimpleStatement: ast::Suite = {
             StatementsOrDoBlock::DoBlock(d) => {
                 let mut statement = s1;
 
-                if let ast::StmtKind::Expr { value } = &mut statement.node {
-                    if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
-                        args.push(d);
-                        return Ok(vec![statement]).into();
+                match &mut statement.node {
+                    ast::StmtKind::Expr { value } => {
+                        if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
+                            args.push(d);
+                            return Ok(vec![statement]).into();
+                        } else {
+                            return Err(LexicalError{
+                                error : LexicalErrorType::OtherError(format!("last expression is not a call {value:?}").to_string()),
+                                location: d.location,
+                            }.into());
+                        }
+                    },
+                    ast::StmtKind::Assign { targets, value, type_comment } => {
+                        if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
+                            args.push(d);
+                            return Ok(vec![statement]).into();
+                        } else {
+                            return Err(LexicalError{
+                                error : LexicalErrorType::OtherError(format!("last expression is not a call {value:?}").to_string()),
+                                location: d.location,
+                            }.into());
+                        }
+                    },
+                    _ => {
+                        return Err(LexicalError{
+                            error : LexicalErrorType::OtherError(format!("last non-expression is {statement:?}").to_string()),
+                            location: d.location,
+                        }.into());
                     }
                 }
                 Err(LexicalError{

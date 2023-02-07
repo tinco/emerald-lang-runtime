@@ -178,6 +178,33 @@ class Foo extends A:
     }
 
     #[test]
+    fn test_do_blocks() {
+        let source = "\
+some_fun() do:
+  print('Hello world')
+print('ok')";
+        insta::assert_debug_snapshot!(parse_program(source, "<test>").unwrap());
+    }
+
+    #[test]
+    fn test_do_blocks_inside_assignment() {
+        let source = "\
+a = some_fun() do:
+  print('Hello world')
+print('ok')";
+        insta::assert_debug_snapshot!(parse_program(source, "<test>").unwrap());
+    } 
+ 
+    #[test]
+    fn test_do_blocks_inside_expression() {
+        let source = "\
+5 + some_fun() do:
+  print('Hello world')
+print('ok')";
+        insta::assert_debug_snapshot!(parse_program(source, "<test>").unwrap());
+    } 
+
+    #[test]
     fn test_parse_dict_comprehension() {
         let source = String::from("{x1: x2 for y in z}");
         let parse_ast = parse_expression(&source, "<test>").unwrap();
