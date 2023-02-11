@@ -161,6 +161,28 @@ pub enum StmtKind<U = ()> {
     Break,
     Continue,
 }
+
+pub fn modify_rightmost_expr_of_statement(statement: &mut StmtKind, f: fn(&mut Box<Expr>) -> bool) -> bool {
+    match statement {
+        StmtKind::Expr { value } => { f(value) },
+        StmtKind::Return { value } => {
+            if let Some(value) = value {
+                return f(value);
+            }
+            false
+        },
+        StmtKind::Assign { value, .. } => { f(value) },
+        _ => false
+    }
+}
+
+pub fn modify_rightmost_expr_of_expr(expr: &mut ExprKind, f: fn(&mut Expr)) {
+    match expr {
+        ExprKind::BinOp { right , .. } => { f(right) },
+        _ => f(expr)
+    }
+}
+
 pub type Stmt<U = ()> = Located<StmtKind<U>, U>;
 
 #[derive(Clone, Debug, PartialEq)]
