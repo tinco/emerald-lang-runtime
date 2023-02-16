@@ -162,7 +162,7 @@ pub enum StmtKind<U = ()> {
     Continue,
 }
 
-pub fn modify_rightmost_expr_of_statement(statement: &mut StmtKind, f: fn(&mut Expr) -> bool) -> bool {
+pub fn modify_rightmost_expr_of_statement(statement: &mut StmtKind, mut f: impl FnMut(&mut Expr) -> bool) -> bool {
     match statement {
         StmtKind::Expr { value } => { f(value) },
         StmtKind::Return { value } => {
@@ -176,7 +176,7 @@ pub fn modify_rightmost_expr_of_statement(statement: &mut StmtKind, f: fn(&mut E
     }
 }
 
-pub fn modify_rightmost_expr(expr: &mut Expr, f: fn(&mut Expr)) {
+pub fn modify_rightmost_expr(expr: &mut Expr, mut f: impl FnMut(&mut Expr) -> bool) -> bool {
     match expr.node {
         ExprKind::BinOp { ref mut right , .. } => { modify_rightmost_expr(right, f) },
         ExprKind::BoolOp { ref mut values, .. } => {
