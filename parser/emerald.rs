@@ -1,5 +1,5 @@
 // auto-generated: "lalrpop 0.19.8"
-// sha3: c49aeda7966802b63bcfb6e9b20cbb9624123186482146624ac3d1b3b51c23f3
+// sha3: e73990ebc26593e45a55590762effabae8cbcf7c4e3af81d902c498aba04bda9
 use crate::{
     ast,
     do_block::{StatementsOrDoBlock},
@@ -23551,41 +23551,36 @@ fn __action11<
             },
             StatementsOrDoBlock::DoBlock(d) => {
                 let mut statement = s1;
+                let begin_location = d.location;
+                let end_location = d.end_location;
 
-                match &mut statement.node {
-                    ast::StmtKind::Expr { value } => {
-                        if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
-                            args.push(d);
-                            return Ok(vec![statement]).into();
-                        } else {
-                            return Err(LexicalError{
-                                error : LexicalErrorType::OtherError(format!("last expression is not a call {value:?}").to_string()),
-                                location: d.location,
-                            }.into());
+                let modified = ast::modify_rightmost_expr_of_statement(&mut statement.node, |mut expr| {
+                    ast::modify_rightmost_expr(&mut expr, |mut expr| {
+                        match &mut expr.node {
+                            ast::ExprKind::Call { ref mut args, .. } => {
+                                args.push(ast::Expr {
+                                    location: begin_location,
+                                    end_location: end_location,
+                                    custom: (),
+                                    node: d.node.clone(),
+                                });
+                                true
+                            },
+                            _ => {
+                                false
+                            }
                         }
-                    },
-                    ast::StmtKind::Assign { targets, value, type_comment } => {
-                        if let ast::ExprKind::Call { func, args, keywords } = &mut value.node {
-                            args.push(d);
-                            return Ok(vec![statement]).into();
-                        } else {
-                            return Err(LexicalError{
-                                error : LexicalErrorType::OtherError(format!("last expression is not a call {value:?}").to_string()),
-                                location: d.location,
-                            }.into());
-                        }
-                    },
-                    _ => {
-                        return Err(LexicalError{
-                            error : LexicalErrorType::OtherError(format!("last non-expression is {statement:?}").to_string()),
-                            location: d.location,
-                        }.into());
-                    }
-                }
-                Err(LexicalError{
+                    })
+                });
+
+                if (!modified) {
+                    Err(LexicalError{
                     error : LexicalErrorType::OtherError("last expression prior to do block must be a function call".to_string()),
                     location: d.location,
-                }.into())
+                    }.into())
+                } else {
+                    Ok(vec![statement])
+                }
             }
         }
     }
