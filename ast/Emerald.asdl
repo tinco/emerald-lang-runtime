@@ -59,7 +59,7 @@ module Emerald
          | BinOp(expr left, operator op, expr right)
          | UnaryOp(unaryop op, expr operand)
          | Lambda(arguments args, expr body)
-         | DoBlock(arguments args, stmt* body)
+         | DoBlock(arguments args, stmt* body, expr? chain)
          | IfExp(expr test, expr body, expr orelse)
          | Dict(expr* keys, expr* values)
          | Set(expr* elts)

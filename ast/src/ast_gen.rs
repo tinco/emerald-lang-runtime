@@ -161,33 +161,6 @@ pub enum StmtKind<U = ()> {
     Break,
     Continue,
 }
-
-pub fn modify_rightmost_expr_of_statement(statement: &mut StmtKind, mut f: impl FnMut(&mut Expr) -> bool) -> bool {
-    match statement {
-        StmtKind::Expr { value } => { f(value) },
-        StmtKind::Return { value } => {
-            if let Some(value) = value {
-                return f(value);
-            }
-            false
-        },
-        StmtKind::Assign { value, .. } => { f(value) },
-        _ => false
-    }
-}
-
-pub fn modify_rightmost_expr(expr: &mut Expr, mut f: impl FnMut(&mut Expr) -> bool) -> bool {
-    match expr.node {
-        ExprKind::BinOp { ref mut right , .. } => { modify_rightmost_expr(right, f) },
-        ExprKind::BoolOp { ref mut values, .. } => {
-            let len = values.len();
-            modify_rightmost_expr(&mut values[len - 1], f)
-        },
-        ExprKind::UnaryOp { ref mut operand, .. } => { modify_rightmost_expr(operand, f) },
-        _ => f(expr)
-    }
-}
-
 pub type Stmt<U = ()> = Located<StmtKind<U>, U>;
 
 #[derive(Clone, Debug, PartialEq)]
@@ -216,6 +189,7 @@ pub enum ExprKind<U = ()> {
     DoBlock {
         args: Box<Arguments<U>>,
         body: Vec<Stmt<U>>,
+        chain: Option<Box<Expr<U>>>,
     },
     IfExp {
         test: Box<Expr<U>>,
@@ -793,10 +767,11 @@ pub mod fold {
                     body: Foldable::fold(body, folder)?,
                 })
             }
-            ExprKind::DoBlock { args,body } => {
+            ExprKind::DoBlock { args,body,chain } => {
                 Ok(ExprKind::DoBlock {
                     args: Foldable::fold(args, folder)?,
                     body: Foldable::fold(body, folder)?,
+                    chain: Foldable::fold(chain, folder)?,
                 })
             }
             ExprKind::IfExp { test,body,orelse } => {

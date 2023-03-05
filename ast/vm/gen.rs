@@ -373,7 +373,7 @@ struct NodeDoBlock;
 impl NodeDoBlock {
     #[extend_class]
     fn extend_class_with_fields(ctx: &Context, class: &'static Py<PyType>) {
-        class.set_attr(identifier!(ctx, _fields), ctx.new_tuple(vec![ctx.new_str(ascii!("args")).into(),ctx.new_str(ascii!("body")).into()]).into());
+        class.set_attr(identifier!(ctx, _fields), ctx.new_tuple(vec![ctx.new_str(ascii!("args")).into(),ctx.new_str(ascii!("body")).into(),ctx.new_str(ascii!("chain")).into()]).into());
         class.set_attr(identifier!(ctx, _attributes), ctx.new_list(vec![ctx.new_str(ascii!("lineno")).into(),ctx.new_str(ascii!("col_offset")).into(),ctx.new_str(ascii!("end_lineno")).into(),ctx.new_str(ascii!("end_col_offset")).into()]).into());
     }
 }
@@ -1610,11 +1610,12 @@ impl Node for ast::ExprKind {
                 _dict.set_item("body", body.ast_to_object(_vm), _vm).unwrap();
                 _node.into()
             }
-            ast::ExprKind::DoBlock { args,body } => {
+            ast::ExprKind::DoBlock { args,body,chain } => {
                 let _node = AstNode.into_ref_with_type(_vm, NodeDoBlock::static_type().to_owned()).unwrap();
                 let _dict = _node.as_object().dict().unwrap();
                 _dict.set_item("args", args.ast_to_object(_vm), _vm).unwrap();
                 _dict.set_item("body", body.ast_to_object(_vm), _vm).unwrap();
+                _dict.set_item("chain", chain.ast_to_object(_vm), _vm).unwrap();
                 _node.into()
             }
             ast::ExprKind::IfExp { test,body,orelse } => {
@@ -1815,6 +1816,7 @@ impl Node for ast::ExprKind {
             ast::ExprKind::DoBlock {
                 args: Node::ast_from_object(_vm, get_node_field(_vm, &_object, "args", "expr")?)?,
                 body: Node::ast_from_object(_vm, get_node_field(_vm, &_object, "body", "expr")?)?,
+                chain: get_node_field_opt(_vm, &_object, "chain")?.map(|obj| Node::ast_from_object(_vm, obj)).transpose()?,
             }
         } else
         if _cls.is(NodeIfExp::static_type()) {
