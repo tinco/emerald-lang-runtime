@@ -1249,6 +1249,7 @@ Atom: ast::Expr = {
     <location:@L> "False" <end_location:@R> => ast::Expr::new(location, end_location, ast::ExprKind::Constant { value: false.into(), kind: None }),
     <location:@L> "None" <end_location:@R> => ast::Expr::new(location, end_location, ast::ExprKind::Constant { value: ast::Constant::None, kind: None }),
     <location:@L> "..." <end_location:@R> => ast::Expr::new(location, end_location, ast::ExprKind::Constant { value: ast::Constant::Ellipsis, kind: None }),
+    <location:@L> "|" <end_location:@R> => ast::Expr::new(location, end_location, ast::ExprKind::EndOfBlockMarker { }),
 };
 
 ListLiteralValues: Vec<ast::Expr> = {

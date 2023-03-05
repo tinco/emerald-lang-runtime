@@ -54,6 +54,7 @@ impl<U> ExprKind<U> {
             ExprKind::Name { .. } => "name",
             ExprKind::Lambda { .. } => "lambda",
             ExprKind::DoBlock { .. } => "do block",
+            ExprKind::EndOfBlockMarker => "end of block",
             ExprKind::IfExp { .. } => "conditional expression",
             ExprKind::NamedExpr { .. } => "named expression",
         }

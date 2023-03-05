@@ -12,5 +12,7 @@ class Bla extends Blu:
     is_ = "not quite Python"
     is_.characters.map() do c:
       c.upcase()
-
+      |.filter() do c:
+        c.odd?()
+        |.join(', ')
 1

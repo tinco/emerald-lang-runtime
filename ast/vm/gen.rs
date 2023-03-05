@@ -377,6 +377,16 @@ impl NodeDoBlock {
         class.set_attr(identifier!(ctx, _attributes), ctx.new_list(vec![ctx.new_str(ascii!("lineno")).into(),ctx.new_str(ascii!("col_offset")).into(),ctx.new_str(ascii!("end_lineno")).into(),ctx.new_str(ascii!("end_col_offset")).into()]).into());
     }
 }
+#[pyclass(module = "_ast", name = "EndOfBlockMarker", base = "NodeKindExpr")]
+struct NodeEndOfBlockMarker;
+#[pyclass(flags(HAS_DICT, BASETYPE))]
+impl NodeEndOfBlockMarker {
+    #[extend_class]
+    fn extend_class_with_fields(ctx: &Context, class: &'static Py<PyType>) {
+        class.set_attr(identifier!(ctx, _fields), ctx.new_tuple(vec![]).into());
+        class.set_attr(identifier!(ctx, _attributes), ctx.new_list(vec![ctx.new_str(ascii!("lineno")).into(),ctx.new_str(ascii!("col_offset")).into(),ctx.new_str(ascii!("end_lineno")).into(),ctx.new_str(ascii!("end_col_offset")).into()]).into());
+    }
+}
 #[pyclass(module = "_ast", name = "IfExp", base = "NodeKindExpr")]
 struct NodeIfExp;
 #[pyclass(flags(HAS_DICT, BASETYPE))]
@@ -1618,6 +1628,10 @@ impl Node for ast::ExprKind {
                 _dict.set_item("chain", chain.ast_to_object(_vm), _vm).unwrap();
                 _node.into()
             }
+            ast::ExprKind::EndOfBlockMarker {  } => {
+                let _node = AstNode.into_ref_with_type(_vm, NodeEndOfBlockMarker::static_type().to_owned()).unwrap();
+                _node.into()
+            }
             ast::ExprKind::IfExp { test,body,orelse } => {
                 let _node = AstNode.into_ref_with_type(_vm, NodeIfExp::static_type().to_owned()).unwrap();
                 let _dict = _node.as_object().dict().unwrap();
@@ -1817,6 +1831,10 @@ impl Node for ast::ExprKind {
                 args: Node::ast_from_object(_vm, get_node_field(_vm, &_object, "args", "expr")?)?,
                 body: Node::ast_from_object(_vm, get_node_field(_vm, &_object, "body", "expr")?)?,
                 chain: get_node_field_opt(_vm, &_object, "chain")?.map(|obj| Node::ast_from_object(_vm, obj)).transpose()?,
+            }
+        } else
+        if _cls.is(NodeEndOfBlockMarker::static_type()) {
+            ast::ExprKind::EndOfBlockMarker {
             }
         } else
         if _cls.is(NodeIfExp::static_type()) {
@@ -2683,6 +2701,7 @@ pub fn extend_module_nodes(vm: &VirtualMachine, module: &PyObject) {
         "UnaryOp" => NodeUnaryOp::make_class(&vm.ctx),
         "Lambda" => NodeLambda::make_class(&vm.ctx),
         "DoBlock" => NodeDoBlock::make_class(&vm.ctx),
+        "EndOfBlockMarker" => NodeEndOfBlockMarker::make_class(&vm.ctx),
         "IfExp" => NodeIfExp::make_class(&vm.ctx),
         "Dict" => NodeDict::make_class(&vm.ctx),
         "Set" => NodeSet::make_class(&vm.ctx),

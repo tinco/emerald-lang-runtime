@@ -60,6 +60,7 @@ module Emerald
          | UnaryOp(unaryop op, expr operand)
          | Lambda(arguments args, expr body)
          | DoBlock(arguments args, stmt* body, expr? chain)
+         | EndOfBlockMarker
          | IfExp(expr test, expr body, expr orelse)
          | Dict(expr* keys, expr* values)
          | Set(expr* elts)

@@ -46,3 +46,29 @@ pub enum DoMode {
     Async,
     Sync,
 }
+
+pub fn modify_rightmost_expr_of_statement(statement: &mut StmtKind, mut f: impl FnMut(&mut Expr) -> bool) -> bool {
+    match statement {
+        StmtKind::Expr { value } => { f(value) },
+        StmtKind::Return { value } => {
+            if let Some(value) = value {
+                return f(value);
+            }
+            false
+        },
+        StmtKind::Assign { value, .. } => { f(value) },
+        _ => false
+    }
+}
+
+pub fn modify_rightmost_expr(expr: &mut Expr, mut f: impl FnMut(&mut Expr) -> bool) -> bool {
+    match expr.node {
+        ExprKind::BinOp { ref mut right , .. } => { modify_rightmost_expr(right, f) },
+        ExprKind::BoolOp { ref mut values, .. } => {
+            let len = values.len();
+            modify_rightmost_expr(&mut values[len - 1], f)
+        },
+        ExprKind::UnaryOp { ref mut operand, .. } => { modify_rightmost_expr(operand, f) },
+        _ => f(expr)
+    }
+}

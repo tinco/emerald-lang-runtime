@@ -191,6 +191,7 @@ pub enum ExprKind<U = ()> {
         body: Vec<Stmt<U>>,
         chain: Option<Box<Expr<U>>>,
     },
+    EndOfBlockMarker,
     IfExp {
         test: Box<Expr<U>>,
         body: Box<Expr<U>>,
@@ -772,6 +773,10 @@ pub mod fold {
                     args: Foldable::fold(args, folder)?,
                     body: Foldable::fold(body, folder)?,
                     chain: Foldable::fold(chain, folder)?,
+                })
+            }
+            ExprKind::EndOfBlockMarker {  } => {
+                Ok(ExprKind::EndOfBlockMarker {
                 })
             }
             ExprKind::IfExp { test,body,orelse } => {
