@@ -1052,13 +1052,37 @@ DoBlock: ast::Expr = {
             }
         });
 
+        let mut body = body;
+        let mut new_body: Vec<ast::Stmt>;
+        let mut chain: Option<Box<ast::Expr>> = None;
+
+        if let Some(mut last) = body.last_mut() {
+            if let ast::StmtKind::Expr { ref mut value } = &mut last.node {
+                if ast::modify_leftmost_of_multi_expr(value, |e| {
+                    if let ast::ExprKind::EndOfBlockMarker = e.node {
+                        return true
+                    }
+                    false
+                }) {
+                    chain = Some(value.clone());
+                }
+            }
+        }
+
+        if chain.is_some() {
+            new_body = body[..body.len() - 1].to_vec();
+        } else {
+            new_body = body;
+        }
+
         ast::Expr {
             location,
             end_location: Some(end_location),
             custom: (),
             node: ast::ExprKind::DoBlock {
                 args: Box::new(p),
-                body: body
+                body: new_body,
+                chain: chain
             }
         }
     },
