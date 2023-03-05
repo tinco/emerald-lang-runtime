@@ -72,3 +72,42 @@ pub fn modify_rightmost_expr(expr: &mut Expr, mut f: impl FnMut(&mut Expr) -> bo
         _ => f(expr)
     }
 }
+
+// Applies the function f to the leftmost expression of a multi-expression. A multi-expression is any expression
+// that has an expression on the left side of it. For example, in the expression `a + b + c`, `a` is the leftmost.
+pub fn modify_leftmost_of_multi_expr(expr: &mut Expr, mut f: impl FnMut(&mut Expr) -> bool) -> bool {
+    match expr.node {
+        ExprKind::BoolOp { ref mut values, .. } => {
+            let len = values.len();
+            modify_leftmost_of_multi_expr(&mut values[len - 1], f)
+        },
+        ExprKind::NamedExpr { .. } => f(expr),
+        ExprKind::BinOp { ref mut left , .. } => { modify_leftmost_of_multi_expr(left, f) },
+        ExprKind::UnaryOp { .. } => f(expr),
+        ExprKind::Lambda { .. } => f(expr),
+        ExprKind::DoBlock { .. } => f(expr),
+        ExprKind::EndOfBlockMarker { .. } => f(expr),
+        ExprKind::IfExp { .. } => f(expr),
+        ExprKind::Dict { .. } => f(expr),
+        ExprKind::Set { .. } => f(expr),
+        ExprKind::ListComp { .. } => f(expr),
+        ExprKind::SetComp { .. } => f(expr),
+        ExprKind::DictComp { .. } => f(expr),
+        ExprKind::GeneratorExp { .. } => f(expr),
+        ExprKind::Await { .. } => f(expr),
+        ExprKind::Yield { .. } => f(expr),
+        ExprKind::YieldFrom { .. } => f(expr),
+        ExprKind::Compare { ref mut left, .. } => modify_leftmost_of_multi_expr(left, f),
+        ExprKind::Call { ref mut func, .. } => modify_leftmost_of_multi_expr(func, f),
+        ExprKind::FormattedValue { .. } => f(expr),
+        ExprKind::JoinedStr { .. } => f(expr),
+        ExprKind::Constant { .. } => f(expr),
+        ExprKind::Attribute { ref mut value , .. } => modify_leftmost_of_multi_expr(value, f),
+        ExprKind::Subscript{ ref mut value , .. } => modify_leftmost_of_multi_expr(value, f),
+        ExprKind::Starred { .. } => f(expr),
+        ExprKind::Name { .. } => f(expr),
+        ExprKind::List { .. } => f(expr),
+        ExprKind::Tuple { .. } => f(expr),
+        ExprKind::Slice { .. } => f(expr),
+    }
+}
