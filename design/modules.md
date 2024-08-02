@@ -21,23 +21,30 @@ Based on the code inside of a module, an interface for `self` is derived. For ex
 ```python
 module Predator:
     def eat(organism):
-        self.energy += organism.energy
+        self.energy() += organism.energy
 ```
 
 Then in Rust pseudo-code the module and its interface for `self` would look like this:
 
 ```rust
 interface PredatorSelf {
+    energy: &i32,
+}
+
+interface eat_argument {
     energy: i32,
 }
 
 struct Predator {
-    self: &PredatorSelf,
 }
 
 impl Predator {
-    fn eat(&self, organism: &PredatorSelf) {
-        self.self.energy += organism.energy;
+    fn eat(&self, instance: &PredatorSelf, organism: &eat_argument ) {
+        // TOTHINK: if the organism has energy as a straight up reference here, how to we get it out of for example an `Amoeba`?
+        // the `Amoeba` has an `energy()` function that returns it, but that would mean every variable would have to be accessed
+        // through a function call, just like in Ruby. Is that a problem? During JIT compilation we could optimize this away,
+        // so maybe it isn't.
+        self.instance.energy += organism.energy;
     }
 }
 ```
@@ -53,6 +60,8 @@ class Amoeba extends Organism, Predator:
     pass
 ```
 
+The `Amoeba` class would have the following Rust pseudo-code:
+
 ```rust
 interface OrganismSelf {
 }
@@ -63,14 +72,18 @@ struct Organism {
 }
 
 struct Amoeba {
-    modules: [Organism, Predator],
+    modules: [Organism, Predator]
 }
 
 impl Amoeba {
-    // how does predator get a reference to the energy field?
+    fn energy(&self) -> &i32 {
+        &self.modules.organism.energy
+    }
 
     fn eat(&self, organism: &OrganismSelf) {
         self.modules.predator.eat(&self, organism);
     }
 }
 ```
+
+So it has a static list of modules, at runtime each module gets
