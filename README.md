@@ -67,6 +67,36 @@ What happens to objects when the shape of their type changes? Maybe there's an a
 
 There is a GC with a focus on performance written in Rust called RSGC.
 
+Alternatively we could build the whole thing on .Net, compiling to MSIL. This will give us the advantage of having an
+industrial grade GC and JIT, and because it is highly standardized we could always build a Rust implementation of the
+runtime afterwards.
+
+There is already a decently complete .Net targeting backend for rustc, so the only challenge remaining would be codegen.
+
+So:
+
+1. Compile entire Rust environment to .Net.
+2. Generate MSIL from Emerald
+3. Patch it in as needed.
+
+.Net has some nice features for patching in methods and types:
+
+https://learn.microsoft.com/en-us/dotnet/fundamentals/reflection/reflection
+https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/expression-trees/
+
+#### Strategy
+
+When an Emerald project is loaded, the entire source is loaded and precompiled. During the precompilation step a Rust module
+is generated that provides access to all Rust dependencies with any generic methods that are used in the Emerald code specialized
+to Emerald object shapes with the required traits.
+
+So the proof of concept we could start without any dynamic behavior, and just generate that Rust module, and some hello world
+Emerald function that uses a generic Rust function.
+
+The Emerald object shapes with the required shapes, they just are simple delegators with a list of accessors as needed by the traits.
+Their implementations can be regenerated as the objects change. Them being delegators doesn't necessarily hurt performance as
+the objects are going to be heap allocated anyway, so either a smart JIT optimizes the whole thing or it doesn't.
+
 ## Language
 
 ### Syntax
