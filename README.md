@@ -65,6 +65,11 @@ What happens to objects when the shape of their type changes? Maybe there's an a
 
 ### Runtime
 
+We could transpile to Rust and use cranelift for emitting code.
+
+On how to invoke the rustc compiler: [rustc_driver](https://rustc-dev-guide.rust-lang.org/rustc-driver/intro.html)
+On cranelift: [Cranelift](https://github.com/bjorn3/rustc_codegen_cranelift/tree/master)
+
 There is a GC with a focus on performance written in Rust called RSGC.
 
 Alternatively we could build the whole thing on .Net, compiling to MSIL. This will give us the advantage of having an
