@@ -1,0 +1,12 @@
+cargo-features = ["codegen-backend"]
+
+[package]
+name = "codegen"
+version = "0.1.0"
+edition = "2021"
+
+[profile.dev]
+codegen-backend = "cranelift"
+
+[dependencies]
+rustc_codegen_cranelift = { path = "../../rustc_codegen_cranelift" }
