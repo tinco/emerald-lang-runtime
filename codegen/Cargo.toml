@@ -9,4 +9,4 @@ edition = "2021"
 codegen-backend = "cranelift"
 
 [dependencies]
-rustc_codegen_cranelift = { path = "../../rustc_codegen_cranelift" }
+rustc_codegen_cranelift = { path = "../../rustc_codegen_cranelift", features = ["jit"] }
