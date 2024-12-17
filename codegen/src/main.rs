@@ -10,16 +10,17 @@ extern crate rustc_hir;
 extern crate rustc_interface;
 extern crate rustc_session;
 extern crate rustc_span;
+// extern crate rustc_target;
 
-use std::{collections::BTreeMap, path, process, str, sync::Arc};
+use std::{path, process, str, sync::Arc};
 
 // use rustc_codegen_llvm::LlvmCodegenBackend;
 use rustc_errors::registry;
-use rustc_hash::FxHashMap;
 use rustc_session::config;
 use rustc_interface::{Linker, passes};
 use rustc_codegen_cranelift::{CraneliftCodegenBackend, BackendConfig, CodegenMode};
 use rustc_codegen_ssa::traits::CodegenBackend;
+// use rustc_target::spec::{RelocModel};
 
 fn main() {
     let out = process::Command::new("rustc")
@@ -30,7 +31,7 @@ fn main() {
     let sysroot = str::from_utf8(&out.stdout).unwrap().trim();
     println!("sysroot: {}", sysroot);
 
-    let working_dir = std::env::current_dir().expect("Current directory is invalid");
+    // let working_dir = std::env::current_dir().expect("Current directory is invalid");
     let output_types = config::OutputTypes::new(&[(config::OutputType::Exe, None)]);
     // -Zcodegen-backend=cranelift
 
@@ -53,9 +54,14 @@ println!("{HELLO}");
     };
     backend.print_version();
 
-    let mut config = rustc_interface::Config {
+    let config = rustc_interface::Config {
         opts: config::Options {
             maybe_sysroot: Some(path::PathBuf::from(sysroot)),
+            cg: config::CodegenOptions {
+                prefer_dynamic: true,
+                // relocation_model: Some(RelocModel::Static),
+                ..Default::default()
+            },
             // maybe_sysroot: None,
             output_types,
             ..config::Options::default()
